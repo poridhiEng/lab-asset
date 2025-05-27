@@ -1,1 +1,0 @@
-# Poridhi Lab Assets

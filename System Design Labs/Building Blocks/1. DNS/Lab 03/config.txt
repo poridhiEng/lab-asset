@@ -1,0 +1,2 @@
+- AWS
+    - EC2: t2.micro

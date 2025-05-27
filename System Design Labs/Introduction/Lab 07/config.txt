@@ -1,0 +1,5 @@
+- awscli
+- pulumi
+- docker
+- aws 
+    - ec2 instance: t3.medium

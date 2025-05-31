@@ -1,0 +1,4 @@
+1. awscli
+2. pulumi
+3. aws 
+    - ec2: t2.micro

@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">
+    Python Loop vs NumPy Vectorization
+  </text>
+  
+  <!-- Python Loop Section (Left) -->
+  <g id="python-loop">
+    <!-- Title -->
+    <text x="200" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#d32f2f">
+      Python Loop (Slow)
+    </text>
+    
+    <!-- Array -->
+    <rect x="100" y="90" width="40" height="40" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="120" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">1</text>
+    
+    <rect x="145" y="90" width="40" height="40" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="165" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">2</text>
+    
+    <rect x="190" y="90" width="40" height="40" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="210" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">3</text>
+    
+    <rect x="235" y="90" width="40" height="40" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="255" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">4</text>
+    
+    <!-- Sequential arrows -->
+    <path d="M 120 135 L 120 170" stroke="#d32f2f" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+    <text x="135" y="155" font-family="Arial, sans-serif" font-size="11" fill="#d32f2f">+2</text>
+    
+    <path d="M 165 175 L 165 210" stroke="#d32f2f" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+    <text x="180" y="195" font-family="Arial, sans-serif" font-size="11" fill="#d32f2f">+2</text>
+    
+    <path d="M 210 215 L 210 250" stroke="#d32f2f" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+    <text x="225" y="235" font-family="Arial, sans-serif" font-size="11" fill="#d32f2f">+2</text>
+    
+    <path d="M 255 255 L 255 290" stroke="#d32f2f" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+    <text x="270" y="275" font-family="Arial, sans-serif" font-size="11" fill="#d32f2f">+2</text>
+    
+    <!-- Result boxes at different times -->
+    <rect x="100" y="300" width="40" height="40" fill="#ffcdd2" stroke="#d32f2f" stroke-width="2"/>
+    <text x="120" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">3</text>
+    
+    <rect x="145" y="300" width="40" height="40" fill="#ffcdd2" stroke="#d32f2f" stroke-width="2"/>
+    <text x="165" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">4</text>
+    
+    <rect x="190" y="300" width="40" height="40" fill="#ffcdd2" stroke="#d32f2f" stroke-width="2"/>
+    <text x="210" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">5</text>
+    
+    <rect x="235" y="300" width="40" height="40" fill="#ffcdd2" stroke="#d32f2f" stroke-width="2"/>
+    <text x="255" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">6</text>
+    
+    <!-- Time labels -->
+    <text x="50" y="155" font-family="Arial, sans-serif" font-size="10" fill="#666">Step 1</text>
+    <text x="50" y="195" font-family="Arial, sans-serif" font-size="10" fill="#666">Step 2</text>
+    <text x="50" y="235" font-family="Arial, sans-serif" font-size="10" fill="#666">Step 3</text>
+    <text x="50" y="275" font-family="Arial, sans-serif" font-size="10" fill="#666">Step 4</text>
+    
+    <text x="200" y="365" font-family="Arial, sans-serif" font-size="12" font-style="italic" text-anchor="middle" fill="#d32f2f">
+      One element at a time
+    </text>
+  </g>
+  
+  <!-- NumPy Vectorization Section (Right) -->
+  <g id="numpy-vectorized">
+    <!-- Title -->
+    <text x="600" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1976d2">
+      NumPy Vectorized (Fast)
+    </text>
+    
+    <!-- Array -->
+    <rect x="500" y="90" width="40" height="40" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="520" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">1</text>
+    
+    <rect x="545" y="90" width="40" height="40" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="565" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">2</text>
+    
+    <rect x="590" y="90" width="40" height="40" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="610" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">3</text>
+    
+    <rect x="635" y="90" width="40" height="40" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="655" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">4</text>
+    
+    <!-- Parallel arrows -->
+    <path d="M 520 135 L 520 295" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowblue)"/>
+    <path d="M 565 135 L 565 295" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowblue)"/>
+    <path d="M 610 135 L 610 295" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowblue)"/>
+    <path d="M 655 135 L 655 295" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowblue)"/>
+    
+    <!-- Operation label -->
+    <text x="690" y="210" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976d2">+2</text>
+    <text x="690" y="225" font-family="Arial, sans-serif" font-size="10" fill="#666">(All at once)</text>
+    
+    <!-- Result boxes all at same time -->
+    <rect x="500" y="300" width="40" height="40" fill="#bbdefb" stroke="#1976d2" stroke-width="2"/>
+    <text x="520" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">3</text>
+    
+    <rect x="545" y="300" width="40" height="40" fill="#bbdefb" stroke="#1976d2" stroke-width="2"/>
+    <text x="565" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">4</text>
+    
+    <rect x="590" y="300" width="40" height="40" fill="#bbdefb" stroke="#1976d2" stroke-width="2"/>
+    <text x="610" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">5</text>
+    
+    <rect x="635" y="300" width="40" height="40" fill="#bbdefb" stroke="#1976d2" stroke-width="2"/>
+    <text x="655" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">6</text>
+    
+    <text x="600" y="365" font-family="Arial, sans-serif" font-size="12" font-style="italic" text-anchor="middle" fill="#1976d2">
+      All elements simultaneously
+    </text>
+  </g>
+  
+  <!-- Speed comparison -->
+  <g id="speed-comparison">
+    <rect x="300" y="180" width="200" height="60" fill="#fff9c4" stroke="#f57f17" stroke-width="2" rx="5"/>
+    <text x="400" y="205" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#f57f17">
+      NumPy is 10-100x
+    </text>
+    <text x="400" y="225" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#f57f17">
+      FASTER! ⚡
+    </text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="#d32f2f"/>
+    </marker>
+    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="#1976d2"/>
+    </marker>
+  </defs>
+</svg>

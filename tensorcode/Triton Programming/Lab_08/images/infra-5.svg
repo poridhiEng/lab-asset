@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300">
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="275" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Reduction Operations Comparison</text>
+  <text x="275" y="45" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">Different operations need different "other" values for masking</text>
+
+  <!-- Sum -->
+  <g transform="translate(30, 70)">
+    <rect x="0" y="0" width="155" height="100" fill="#e6ffe6" stroke="#006600" stroke-width="1.5" rx="5"/>
+    <text x="77" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#006600">tl.sum()</text>
+
+    <text x="10" y="42" font-family="monospace" font-size="8" fill="#333">other=0.0</text>
+    <text x="10" y="58" font-family="Arial, sans-serif" font-size="8" fill="#666">Identity: x + 0 = x</text>
+
+    <text x="10" y="78" font-family="Arial, sans-serif" font-size="8" fill="#333">Example:</text>
+    <text x="10" y="92" font-family="monospace" font-size="8" fill="#006600">[3,7,0,0] → 10</text>
+  </g>
+
+  <!-- Max -->
+  <g transform="translate(200, 70)">
+    <rect x="0" y="0" width="155" height="100" fill="#fff9e6" stroke="#cc9900" stroke-width="1.5" rx="5"/>
+    <text x="77" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#cc9900">tl.max()</text>
+
+    <text x="10" y="42" font-family="monospace" font-size="8" fill="#333">other=-inf</text>
+    <text x="10" y="58" font-family="Arial, sans-serif" font-size="8" fill="#666">Identity: max(x,-∞)=x</text>
+
+    <text x="10" y="78" font-family="Arial, sans-serif" font-size="8" fill="#333">Example:</text>
+    <text x="10" y="92" font-family="monospace" font-size="8" fill="#cc9900">[3,7,-∞,-∞] → 7</text>
+  </g>
+
+  <!-- Min -->
+  <g transform="translate(370, 70)">
+    <rect x="0" y="0" width="155" height="100" fill="#ffeeee" stroke="#cc0000" stroke-width="1.5" rx="5"/>
+    <text x="77" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#cc0000">tl.min()</text>
+
+    <text x="10" y="42" font-family="monospace" font-size="8" fill="#333">other=+inf</text>
+    <text x="10" y="58" font-family="Arial, sans-serif" font-size="8" fill="#666">Identity: min(x,+∞)=x</text>
+
+    <text x="10" y="78" font-family="Arial, sans-serif" font-size="8" fill="#333">Example:</text>
+    <text x="10" y="92" font-family="monospace" font-size="8" fill="#cc0000">[3,7,+∞,+∞] → 3</text>
+  </g>
+
+  <!-- Product (conceptual) -->
+  <g transform="translate(30, 190)">
+    <rect x="0" y="0" width="155" height="100" fill="#f0e6ff" stroke="#6600cc" stroke-width="1.5" rx="5"/>
+    <text x="77" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#6600cc">Product*</text>
+
+    <text x="10" y="42" font-family="monospace" font-size="8" fill="#333">other=1.0</text>
+    <text x="10" y="58" font-family="Arial, sans-serif" font-size="8" fill="#666">Identity: x × 1 = x</text>
+
+    <text x="10" y="78" font-family="Arial, sans-serif" font-size="8" fill="#333">*No tl.prod()</text>
+    <text x="10" y="92" font-family="monospace" font-size="8" fill="#6600cc">Use exp(sum(log(x)))</text>
+  </g>
+
+  <!-- Argmax -->
+  <g transform="translate(200, 190)">
+    <rect x="0" y="0" width="155" height="100" fill="#e6f3ff" stroke="#0066cc" stroke-width="1.5" rx="5"/>
+    <text x="77" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#0066cc">tl.argmax()</text>
+
+    <text x="10" y="42" font-family="monospace" font-size="8" fill="#333">other=-inf</text>
+    <text x="10" y="58" font-family="Arial, sans-serif" font-size="8" fill="#666">Returns index of max</text>
+
+    <text x="10" y="78" font-family="Arial, sans-serif" font-size="8" fill="#333">Example:</text>
+    <text x="10" y="92" font-family="monospace" font-size="8" fill="#0066cc">[3,7,2,9] → 3</text>
+  </g>
+
+  <!-- Mean -->
+  <g transform="translate(370, 190)">
+    <rect x="0" y="0" width="155" height="100" fill="#fff0f5" stroke="#cc0066" stroke-width="1.5" rx="5"/>
+    <text x="77" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#cc0066">Mean</text>
+
+    <text x="10" y="42" font-family="monospace" font-size="8" fill="#333">other=0.0</text>
+    <text x="10" y="58" font-family="Arial, sans-serif" font-size="8" fill="#666">sum(x) / n_elements</text>
+
+    <text x="10" y="78" font-family="Arial, sans-serif" font-size="8" fill="#333">Note: divide by n,</text>
+    <text x="10" y="92" font-family="monospace" font-size="8" fill="#cc0066">not BLOCK_SIZE!</text>
+  </g>
+</svg>

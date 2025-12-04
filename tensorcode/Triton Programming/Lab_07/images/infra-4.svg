@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="300" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Tanh Function</text>
+  <text x="300" y="45" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">tanh(x) = (e^x - e^(-x)) / (e^x + e^(-x)) = 2σ(2x) - 1</text>
+
+  <!-- Coordinate system -->
+  <g transform="translate(120, 200)">
+    <!-- Axes -->
+    <line x1="-80" y1="0" x2="280" y2="0" stroke="#333" stroke-width="1.5"/>
+    <line x1="100" y1="130" x2="100" y2="-130" stroke="#333" stroke-width="1.5"/>
+
+    <!-- Axis labels -->
+    <text x="270" y="18" font-family="Arial, sans-serif" font-size="11" fill="#333">x</text>
+    <text x="108" y="-120" font-family="Arial, sans-serif" font-size="11" fill="#333">tanh(x)</text>
+
+    <!-- Y-axis ticks -->
+    <line x1="95" y1="-100" x2="105" y2="-100" stroke="#333" stroke-width="1"/>
+    <text x="85" y="-96" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#333">1</text>
+
+    <line x1="95" y1="100" x2="105" y2="100" stroke="#333" stroke-width="1"/>
+    <text x="85" y="104" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#333">-1</text>
+
+    <text x="85" y="4" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#333">0</text>
+
+    <!-- Horizontal guide lines -->
+    <line x1="-80" y1="-100" x2="280" y2="-100" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="-80" y1="100" x2="280" y2="100" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+
+    <!-- Tanh curve -->
+    <path d="M -80 98 Q 0 95, 40 85 Q 60 70, 80 40 Q 100 0, 120 -40 Q 140 -70, 160 -85 Q 200 -95, 280 -98"
+          fill="none" stroke="#cc6600" stroke-width="3"/>
+
+    <!-- Key point at origin -->
+    <circle cx="100" cy="0" r="4" fill="#cc6600"/>
+    <text x="115" y="15" font-family="Arial, sans-serif" font-size="9" fill="#cc6600">(0, 0)</text>
+
+    <!-- Asymptote labels -->
+    <text x="-60" y="90" font-family="Arial, sans-serif" font-size="9" fill="#666">→ -1</text>
+    <text x="240" y="-90" font-family="Arial, sans-serif" font-size="9" fill="#666">→ +1</text>
+  </g>
+
+  <!-- Properties box -->
+  <g transform="translate(400, 80)">
+    <rect x="0" y="0" width="170" height="120" fill="#f5f5f5" stroke="#ddd" stroke-width="1" rx="5"/>
+    <text x="85" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#333">Properties</text>
+    <text x="10" y="40" font-family="Arial, sans-serif" font-size="9" fill="#333">• Output: (-1, 1)</text>
+    <text x="10" y="55" font-family="Arial, sans-serif" font-size="9" fill="#333">• tanh(0) = 0</text>
+    <text x="10" y="70" font-family="Arial, sans-serif" font-size="9" fill="#333">• tanh(-x) = -tanh(x)</text>
+    <text x="10" y="85" font-family="Arial, sans-serif" font-size="9" fill="#333">• Zero-centered output</text>
+    <text x="10" y="100" font-family="Arial, sans-serif" font-size="9" fill="#333">• Popular in RNNs</text>
+  </g>
+
+  <!-- Output range indicator -->
+  <g transform="translate(30, 100)">
+    <rect x="0" y="0" width="25" height="100" fill="none" stroke="#cc6600" stroke-width="2" rx="3"/>
+    <rect x="2" y="2" width="21" height="96" fill="url(#tanh-gradient)" rx="2"/>
+    <text x="12" y="-8" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#333">+1</text>
+    <text x="12" y="115" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#333">-1</text>
+    <text x="12" y="55" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#333">0</text>
+  </g>
+
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="tanh-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#cc6600;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fff9e6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066cc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

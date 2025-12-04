@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300">
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="275" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Temperature-Scaled Softmax</text>
+  <text x="275" y="42" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">softmax(x/T) - controlling distribution sharpness</text>
+
+  <!-- Input -->
+  <g transform="translate(30, 70)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Input: [1, 2, 3, 4]</text>
+  </g>
+
+  <!-- Temperature T=0.5 (Sharp) -->
+  <g transform="translate(30, 100)">
+    <rect x="0" y="0" width="150" height="80" fill="#ffeeee" stroke="#cc0000" stroke-width="1" rx="5"/>
+    <text x="75" y="18" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#cc0000">T = 0.5 (Sharp)</text>
+
+    <!-- Bar chart -->
+    <rect x="15" y="65" width="20" height="5" fill="#cc0000" rx="1"/>
+    <rect x="45" y="58" width="20" height="12" fill="#cc0000" rx="1"/>
+    <rect x="75" y="45" width="20" height="25" fill="#cc0000" rx="1"/>
+    <rect x="105" y="25" width="20" height="45" fill="#cc0000" rx="1"/>
+
+    <text x="25" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.002</text>
+    <text x="55" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.016</text>
+    <text x="85" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.12</text>
+    <text x="115" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.86</text>
+  </g>
+
+  <!-- Temperature T=1.0 (Normal) -->
+  <g transform="translate(200, 100)">
+    <rect x="0" y="0" width="150" height="80" fill="#e6f3ff" stroke="#0066cc" stroke-width="1" rx="5"/>
+    <text x="75" y="18" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#0066cc">T = 1.0 (Normal)</text>
+
+    <!-- Bar chart -->
+    <rect x="15" y="60" width="20" height="10" fill="#0066cc" rx="1"/>
+    <rect x="45" y="52" width="20" height="18" fill="#0066cc" rx="1"/>
+    <rect x="75" y="40" width="20" height="30" fill="#0066cc" rx="1"/>
+    <rect x="105" y="25" width="20" height="45" fill="#0066cc" rx="1"/>
+
+    <text x="25" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.03</text>
+    <text x="55" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.09</text>
+    <text x="85" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.24</text>
+    <text x="115" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.64</text>
+  </g>
+
+  <!-- Temperature T=2.0 (Soft) -->
+  <g transform="translate(370, 100)">
+    <rect x="0" y="0" width="150" height="80" fill="#e6ffe6" stroke="#006600" stroke-width="1" rx="5"/>
+    <text x="75" y="18" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#006600">T = 2.0 (Soft)</text>
+
+    <!-- Bar chart -->
+    <rect x="15" y="55" width="20" height="15" fill="#006600" rx="1"/>
+    <rect x="45" y="48" width="20" height="22" fill="#006600" rx="1"/>
+    <rect x="75" y="38" width="20" height="32" fill="#006600" rx="1"/>
+    <rect x="105" y="25" width="20" height="45" fill="#006600" rx="1"/>
+
+    <text x="25" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.10</text>
+    <text x="55" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.15</text>
+    <text x="85" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.23</text>
+    <text x="115" y="78" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#666">.52</text>
+  </g>
+
+  <!-- Summary -->
+  <g transform="translate(30, 200)">
+    <rect x="0" y="0" width="490" height="85" fill="#f5f5f5" stroke="#ddd" stroke-width="1" rx="5"/>
+    <text x="245" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#333">Temperature Effect Summary</text>
+
+    <g transform="translate(20, 35)">
+      <rect x="0" y="0" width="140" height="20" fill="#ffeeee" rx="3"/>
+      <text x="70" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#cc0000">T &lt; 1: More confident</text>
+    </g>
+
+    <g transform="translate(175, 35)">
+      <rect x="0" y="0" width="140" height="20" fill="#e6f3ff" rx="3"/>
+      <text x="70" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#0066cc">T = 1: Standard softmax</text>
+    </g>
+
+    <g transform="translate(330, 35)">
+      <rect x="0" y="0" width="140" height="20" fill="#e6ffe6" rx="3"/>
+      <text x="70" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#006600">T &gt; 1: More uniform</text>
+    </g>
+
+    <text x="245" y="75" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Used in: Language model sampling, Knowledge distillation, Reinforcement learning</text>
+  </g>
+</svg>

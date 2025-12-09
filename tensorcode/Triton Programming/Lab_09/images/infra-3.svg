@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="300" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Stable Softmax Algorithm</text>
+  <text x="300" y="42" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">Three-step process for numerical stability</text>
+
+  <!-- Step 1: Find Max -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="150" height="70" fill="#cce5ff" stroke="#0066cc" stroke-width="2" rx="5"/>
+    <text x="75" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#0066cc">Step 1: Find Max</text>
+    <text x="75" y="40" font-family="monospace" font-size="9" text-anchor="middle" fill="#333">m = max(x)</text>
+    <text x="75" y="58" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Reduction operation</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(210, 95)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#333" stroke-width="2" marker-end="url(#arrow-alg)"/>
+  </g>
+
+  <!-- Step 2: Compute Exp Sum -->
+  <g transform="translate(250, 70)">
+    <rect x="0" y="0" width="150" height="70" fill="#fff9e6" stroke="#cc9900" stroke-width="2" rx="5"/>
+    <text x="75" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#cc9900">Step 2: Exp & Sum</text>
+    <text x="75" y="40" font-family="monospace" font-size="9" text-anchor="middle" fill="#333">s = Σ exp(x_i - m)</text>
+    <text x="75" y="58" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Shifted exponentials</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(410, 95)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#333" stroke-width="2" marker-end="url(#arrow-alg)"/>
+  </g>
+
+  <!-- Step 3: Normalize -->
+  <g transform="translate(450, 70)">
+    <rect x="0" y="0" width="120" height="70" fill="#e6ffe6" stroke="#006600" stroke-width="2" rx="5"/>
+    <text x="60" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#006600">Step 3: Normalize</text>
+    <text x="60" y="40" font-family="monospace" font-size="9" text-anchor="middle" fill="#333">out = exp(x-m)/s</text>
+    <text x="60" y="58" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Divide each</text>
+  </g>
+
+  <!-- Example walkthrough -->
+  <g transform="translate(50, 170)">
+    <rect x="0" y="0" width="520" height="130" fill="#f5f5f5" stroke="#ddd" stroke-width="1" rx="5"/>
+    <text x="260" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#333">Example: x = [2.0, 1.0, 0.1]</text>
+
+    <!-- Step 1 result -->
+    <g transform="translate(20, 40)">
+      <rect x="0" y="0" width="150" height="25" fill="#cce5ff" stroke="#0066cc" stroke-width="1" rx="3"/>
+      <text x="75" y="17" font-family="monospace" font-size="9" text-anchor="middle" fill="#333">m = max(x) = 2.0</text>
+    </g>
+
+    <!-- Step 2 result -->
+    <g transform="translate(190, 40)">
+      <rect x="0" y="0" width="150" height="45" fill="#fff9e6" stroke="#cc9900" stroke-width="1" rx="3"/>
+      <text x="75" y="15" font-family="monospace" font-size="9" text-anchor="middle" fill="#333">x - m = [0, -1, -1.9]</text>
+      <text x="75" y="30" font-family="monospace" font-size="9" text-anchor="middle" fill="#333">exp = [1, 0.37, 0.15]</text>
+      <text x="75" y="42" font-family="monospace" font-size="9" text-anchor="middle" fill="#333">s = 1.52</text>
+    </g>
+
+    <!-- Step 3 result -->
+    <g transform="translate(360, 40)">
+      <rect x="0" y="0" width="140" height="25" fill="#e6ffe6" stroke="#006600" stroke-width="1" rx="3"/>
+      <text x="70" y="17" font-family="monospace" font-size="9" text-anchor="middle" fill="#006600">[0.66, 0.24, 0.10]</text>
+    </g>
+
+    <!-- Final check -->
+    <text x="260" y="115" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#006600">✓ Sum = 1.0  |  ✓ All values in (0,1)  |  ✓ No overflow</text>
+  </g>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow-alg" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380">
+  <!-- Background -->
+  <rect width="700" height="380" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">
+    How 2D Indexing Works: Broadcasting
+  </text>
+
+  <!-- Step 1: m array -->
+  <rect x="30" y="55" width="180" height="120" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="8"/>
+  <text x="120" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#388e3c">
+    m = [2, 3]
+  </text>
+  <text x="120" y="100" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">
+    m[:, None] → column
+  </text>
+
+  <!-- m as column vector -->
+  <rect x="85" y="115" width="30" height="25" fill="#81c784" stroke="#388e3c" stroke-width="2" rx="3"/>
+  <text x="100" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">2</text>
+  <rect x="85" y="142" width="30" height="25" fill="#81c784" stroke="#388e3c" stroke-width="2" rx="3"/>
+  <text x="100" y="159" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">3</text>
+
+  <text x="130" y="140" font-family="Arial, sans-serif" font-size="20" fill="#333">→</text>
+  <text x="155" y="132" font-family="Arial, sans-serif" font-size="10" fill="#666">row</text>
+  <text x="155" y="145" font-family="Arial, sans-serif" font-size="10" fill="#666">indices</text>
+
+  <!-- Plus sign -->
+  <text x="230" y="125" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#ff9800">×</text>
+
+  <!-- Step 2: n array -->
+  <rect x="260" y="55" width="180" height="120" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="8"/>
+  <text x="350" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1976d2">
+    n = [2, 3]
+  </text>
+  <text x="350" y="100" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">
+    n[None, :] → row
+  </text>
+
+  <!-- n as row vector -->
+  <rect x="295" y="115" width="30" height="25" fill="#42a5f5" stroke="#1976d2" stroke-width="2" rx="3"/>
+  <text x="310" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">2</text>
+  <rect x="327" y="115" width="30" height="25" fill="#42a5f5" stroke="#1976d2" stroke-width="2" rx="3"/>
+  <text x="342" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">3</text>
+
+  <text x="380" y="135" font-family="Arial, sans-serif" font-size="10" fill="#666">col indices</text>
+  <text x="310" y="160" font-family="Arial, sans-serif" font-size="20" fill="#333">↓</text>
+
+  <!-- Equals sign -->
+  <text x="460" y="125" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#ff9800">=</text>
+
+  <!-- Step 3: Result 2D grid -->
+  <rect x="490" y="55" width="190" height="120" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="8"/>
+  <text x="585" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">
+    2D Tile Indices
+  </text>
+  <text x="585" y="98" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">
+    (row, col) pairs
+  </text>
+
+  <!-- Result grid -->
+  <rect x="520" y="108" width="50" height="28" fill="#ffb74d" stroke="#ff9800" stroke-width="2" rx="3"/>
+  <text x="545" y="127" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">(2,2)</text>
+  <rect x="575" y="108" width="50" height="28" fill="#ffb74d" stroke="#ff9800" stroke-width="2" rx="3"/>
+  <text x="600" y="127" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">(2,3)</text>
+  <rect x="520" y="140" width="50" height="28" fill="#ffb74d" stroke="#ff9800" stroke-width="2" rx="3"/>
+  <text x="545" y="159" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">(3,2)</text>
+  <rect x="575" y="140" width="50" height="28" fill="#ffb74d" stroke="#ff9800" stroke-width="2" rx="3"/>
+  <text x="600" y="159" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">(3,3)</text>
+
+  <!-- Arrow to matrix -->
+  <path d="M 350 185 L 350 210" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="350" y="228" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Maps to matrix positions</text>
+
+  <!-- Matrix visualization -->
+  <rect x="150" y="245" width="400" height="120" fill="#fafafa" stroke="#9e9e9e" stroke-width="2" rx="8"/>
+
+  <!-- Matrix with highlighted tile -->
+  <text x="170" y="275" font-family="Arial, sans-serif" font-size="12" fill="#333">4×4 Matrix:</text>
+
+  <!-- Row 0 -->
+  <rect x="255" y="260" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="272" y="279" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">0</text>
+  <rect x="292" y="260" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="309" y="279" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">1</text>
+  <rect x="329" y="260" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="346" y="279" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">2</text>
+  <rect x="366" y="260" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="383" y="279" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">3</text>
+
+  <!-- Row 1 -->
+  <rect x="255" y="290" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="272" y="309" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">4</text>
+  <rect x="292" y="290" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="309" y="309" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">5</text>
+  <rect x="329" y="290" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="346" y="309" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">6</text>
+  <rect x="366" y="290" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="383" y="309" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">7</text>
+
+  <!-- Row 2 (highlighted) -->
+  <rect x="255" y="320" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="272" y="339" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">8</text>
+  <rect x="292" y="320" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="309" y="339" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">9</text>
+  <rect x="329" y="320" width="35" height="28" fill="#ff9800" stroke="#e65100" stroke-width="2" rx="2"/>
+  <text x="346" y="339" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">10</text>
+  <rect x="366" y="320" width="35" height="28" fill="#ff9800" stroke="#e65100" stroke-width="2" rx="2"/>
+  <text x="383" y="339" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">11</text>
+
+  <!-- Row 3 (highlighted) -->
+  <rect x="255" y="350" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="272" y="369" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">12</text>
+  <rect x="292" y="350" width="35" height="28" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="2"/>
+  <text x="309" y="369" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">13</text>
+  <rect x="329" y="350" width="35" height="28" fill="#ff9800" stroke="#e65100" stroke-width="2" rx="2"/>
+  <text x="346" y="369" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">14</text>
+  <rect x="366" y="350" width="35" height="28" fill="#ff9800" stroke="#e65100" stroke-width="2" rx="2"/>
+  <text x="383" y="369" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">15</text>
+
+  <!-- Bracket and label -->
+  <path d="M 410 320 L 425 320 L 425 378 L 410 378" stroke="#e65100" stroke-width="2" fill="none"/>
+  <text x="435" y="345" font-family="Arial, sans-serif" font-size="11" fill="#e65100">This 2×2</text>
+  <text x="435" y="360" font-family="Arial, sans-serif" font-size="11" fill="#e65100">tile is</text>
+  <text x="435" y="375" font-family="Arial, sans-serif" font-size="11" fill="#e65100">processed</text>
+
+  <!-- Row/Col labels -->
+  <text x="235" y="279" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#666">r0</text>
+  <text x="235" y="309" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#666">r1</text>
+  <text x="235" y="339" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#388e3c" font-weight="bold">r2</text>
+  <text x="235" y="369" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#388e3c" font-weight="bold">r3</text>
+
+  <text x="272" y="255" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">c0</text>
+  <text x="309" y="255" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">c1</text>
+  <text x="346" y="255" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#1976d2" font-weight="bold">c2</text>
+  <text x="383" y="255" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#1976d2" font-weight="bold">c3</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

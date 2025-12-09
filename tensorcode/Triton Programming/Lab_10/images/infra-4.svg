@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 320">
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="275" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">CUDA vs Triton: Transpose</text>
+  <text x="275" y="45" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">Triton simplifies what's complex in CUDA</text>
+
+  <!-- CUDA side -->
+  <g transform="translate(30, 70)">
+    <rect x="0" y="0" width="240" height="200" fill="#ffeeee" stroke="#cc0000" stroke-width="1.5" rx="5"/>
+    <text x="120" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#cc0000">CUDA Approach</text>
+
+    <text x="10" y="45" font-family="monospace" font-size="7" fill="#333">__shared__ float tile[32][33];</text>
+    <text x="10" y="58" font-family="monospace" font-size="7" fill="#666">// +1 to avoid bank conflicts!</text>
+
+    <text x="10" y="78" font-family="monospace" font-size="7" fill="#333">// Load to shared memory</text>
+    <text x="10" y="91" font-family="monospace" font-size="7" fill="#333">tile[ty][tx] = input[...];</text>
+
+    <text x="10" y="111" font-family="monospace" font-size="7" fill="#cc0000">__syncthreads();</text>
+    <text x="10" y="124" font-family="monospace" font-size="7" fill="#666">// Explicit sync required!</text>
+
+    <text x="10" y="144" font-family="monospace" font-size="7" fill="#333">// Store from shared memory</text>
+    <text x="10" y="157" font-family="monospace" font-size="7" fill="#333">output[...] = tile[tx][ty];</text>
+
+    <!-- Issues -->
+    <text x="10" y="180" font-family="Arial, sans-serif" font-size="8" fill="#cc0000">• Manual shared memory</text>
+    <text x="10" y="192" font-family="Arial, sans-serif" font-size="8" fill="#cc0000">• Manual bank conflict avoidance</text>
+  </g>
+
+  <!-- Triton side -->
+  <g transform="translate(290, 70)">
+    <rect x="0" y="0" width="230" height="200" fill="#e6ffe6" stroke="#006600" stroke-width="1.5" rx="5"/>
+    <text x="115" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#006600">Triton Approach</text>
+
+    <text x="10" y="50" font-family="monospace" font-size="7" fill="#333">m_idx = m_offs[:, None]</text>
+    <text x="10" y="63" font-family="monospace" font-size="7" fill="#333">n_idx = n_offs[None, :]</text>
+
+    <text x="10" y="88" font-family="monospace" font-size="7" fill="#333">tile = tl.load(</text>
+    <text x="10" y="101" font-family="monospace" font-size="7" fill="#333">  in_ptr + m*s_m + n*s_n)</text>
+
+    <text x="10" y="126" font-family="monospace" font-size="7" fill="#333">tl.store(</text>
+    <text x="10" y="139" font-family="monospace" font-size="7" fill="#333">  out_ptr + n*s_m + m*s_n,</text>
+    <text x="10" y="152" font-family="monospace" font-size="7" fill="#333">  tile)</text>
+
+    <!-- Benefits -->
+    <text x="10" y="180" font-family="Arial, sans-serif" font-size="8" fill="#006600">• Compiler handles shared mem</text>
+    <text x="10" y="192" font-family="Arial, sans-serif" font-size="8" fill="#006600">• Auto bank conflict resolution</text>
+  </g>
+
+  <!-- Comparison table -->
+  <g transform="translate(50, 280)">
+    <rect x="0" y="0" width="450" height="35" fill="#f5f5f5" stroke="#ddd" stroke-width="1" rx="3"/>
+
+    <text x="75" y="13" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#333">Feature</text>
+    <text x="200" y="13" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#cc0000">CUDA</text>
+    <text x="350" y="13" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#006600">Triton</text>
+
+    <line x1="150" y1="0" x2="150" y2="35" stroke="#ddd" stroke-width="1"/>
+    <line x1="280" y1="0" x2="280" y2="35" stroke="#ddd" stroke-width="1"/>
+
+    <text x="75" y="28" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#333">Lines of code</text>
+    <text x="200" y="28" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#cc0000">~25-30</text>
+    <text x="350" y="28" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#006600">~15</text>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <!-- Background -->
+  <rect width="400" height="280" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Train/Test Split (80/20)</text>
+
+  <!-- Pie Chart - centered at 200, 130 with radius 70 -->
+  <!-- Training set (80%) - Blue arc -->
+  <path d="M200,60 A70,70 0 1,1 156.63,188.98 L200,130 Z" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2"/>
+
+  <!-- Test set (20%) - Red arc -->
+  <path d="M156.63,188.98 A70,70 0 0,1 200,60 L200,130 Z" fill="#fecaca" stroke="#ef4444" stroke-width="2"/>
+
+  <!-- Labels on chart - centered in respective portions -->
+  <!-- 80% label: center of 80% slice (at ~144° from top, radius ~45 from center) -->
+  <text x="230" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">80%</text>
+
+  <!-- 20% label: center of 20% slice (at ~324° from top, radius ~45 from center) -->
+  <text x="150" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#b91c1c">20%</text>
+
+  <!-- Total samples text - outside circle -->
+  <text x="200" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569">Total: 50 samples</text>
+
+  <!-- Legend -->
+  <rect x="80" y="250" width="16" height="12" rx="2" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="100" y="260" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Train: 40 samples</text>
+
+  <rect x="220" y="250" width="16" height="12" rx="2" fill="#fecaca" stroke="#ef4444" stroke-width="1"/>
+  <text x="240" y="260" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Test: 10 samples</text>
+</svg>

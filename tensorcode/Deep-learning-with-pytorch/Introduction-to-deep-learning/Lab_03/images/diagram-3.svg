@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350">
+  <!-- White background -->
+  <rect width="900" height="350" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Sequential Network Data Flow
+  </text>
+
+  <!-- Input Data -->
+  <g>
+    <rect x="50" y="100" width="100" height="150" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="8"/>
+    <text x="100" y="125" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1565c0">
+      Input
+    </text>
+    <text x="100" y="150" font-family="Monaco, monospace" font-size="10" text-anchor="middle" fill="#555">
+      Shape:
+    </text>
+    <text x="100" y="170" font-family="Monaco, monospace" font-size="10" text-anchor="middle" fill="#555">
+      (Batch, 5)
+    </text>
+    <rect x="70" y="190" width="60" height="40" fill="#2196f3" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="100" y="215" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">
+      x
+    </text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 160 175 L 220 175" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <text x="190" y="165" font-family="Monaco, monospace" font-size="9" text-anchor="middle" fill="#34495e">forward</text>
+
+  <!-- Layer 1 -->
+  <g>
+    <rect x="230" y="80" width="140" height="190" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="8"/>
+    <text x="300" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">
+      Layer 1
+    </text>
+    <text x="300" y="125" font-family="Monaco, monospace" font-size="9" text-anchor="middle" fill="#555">
+      nn.Linear(5, 10)
+    </text>
+    <rect x="255" y="140" width="90" height="110" fill="#ff9800" stroke="#e65100" stroke-width="1.5" rx="5"/>
+    <text x="300" y="165" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+      Weights:
+    </text>
+    <text x="300" y="182" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="white">
+      (10, 5)
+    </text>
+    <text x="300" y="205" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+      Bias:
+    </text>
+    <text x="300" y="222" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="white">
+      (10,)
+    </text>
+    <text x="300" y="260" font-family="Monaco, monospace" font-size="8" text-anchor="middle" fill="#555">
+      Output: (Batch, 10)
+    </text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 380 175 L 440 175" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Layer 2 -->
+  <g>
+    <rect x="450" y="80" width="140" height="190" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="8"/>
+    <text x="520" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+      Layer 2
+    </text>
+    <text x="520" y="125" font-family="Monaco, monospace" font-size="9" text-anchor="middle" fill="#555">
+      nn.Linear(10, 3)
+    </text>
+    <rect x="475" y="140" width="90" height="110" fill="#9c27b0" stroke="#6a1b9a" stroke-width="1.5" rx="5"/>
+    <text x="520" y="165" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+      Weights:
+    </text>
+    <text x="520" y="182" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="white">
+      (3, 10)
+    </text>
+    <text x="520" y="205" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+      Bias:
+    </text>
+    <text x="520" y="222" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="white">
+      (3,)
+    </text>
+    <text x="520" y="260" font-family="Monaco, monospace" font-size="8" text-anchor="middle" fill="#555">
+      Output: (Batch, 3)
+    </text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 600 175 L 660 175" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Output -->
+  <g>
+    <rect x="670" y="100" width="180" height="150" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="8"/>
+    <text x="760" y="125" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+      Predictions
+    </text>
+    <text x="760" y="150" font-family="Monaco, monospace" font-size="10" text-anchor="middle" fill="#555">
+      Shape:
+    </text>
+    <text x="760" y="170" font-family="Monaco, monospace" font-size="10" text-anchor="middle" fill="#555">
+      (Batch, 3)
+    </text>
+    <rect x="700" y="190" width="120" height="40" fill="#4caf50" stroke="#2e7d32" stroke-width="1.5" rx="3"/>
+    <text x="760" y="215" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">
+      ŷ
+    </text>
+  </g>
+
+  <!-- Code Example -->
+  <g>
+    <rect x="100" y="290" width="700" height="45" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1.5" rx="5"/>
+    <text x="450" y="310" font-family="Monaco, monospace" font-size="11" text-anchor="middle" fill="#2c3e50" font-weight="bold">
+      model = nn.Sequential(nn.Linear(5, 10), nn.Linear(10, 3))
+    </text>
+    <text x="450" y="327" font-family="Monaco, monospace" font-size="10" text-anchor="middle" fill="#555">
+      output = model(input)  # Shape: (Batch, 5) → (Batch, 10) → (Batch, 3)
+    </text>
+  </g>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#34495e"/>
+    </marker>
+  </defs>
+</svg>

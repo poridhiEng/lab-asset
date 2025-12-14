@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <!-- White background -->
+  <rect width="900" height="500" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Weather Prediction Example
+  </text>
+
+  <!-- Subtitle -->
+  <text x="450" y="60" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#7f8c8d">
+    A fully connected network predicting rain and clouds from weather features
+  </text>
+
+  <!-- Main network -->
+  <g>
+    <rect x="50" y="90" width="800" height="380" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+
+    <!-- Input Layer with data -->
+    <g>
+      <text x="140" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+        Weather Features
+      </text>
+
+      <!-- Temperature -->
+      <g>
+        <circle cx="140" cy="180" r="32" fill="#4caf50" stroke="#2e7d32" stroke-width="3"/>
+        <text x="140" y="175" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Temp</text>
+        <text x="140" y="190" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">0.7</text>
+        <text x="140" y="225" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">28°C (hot)</text>
+      </g>
+
+      <!-- Humidity -->
+      <g>
+        <circle cx="140" cy="290" r="32" fill="#4caf50" stroke="#2e7d32" stroke-width="3"/>
+        <text x="140" y="285" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Humidity</text>
+        <text x="140" y="300" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">0.9</text>
+        <text x="140" y="335" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">90% (very humid)</text>
+      </g>
+
+      <!-- Wind -->
+      <g>
+        <circle cx="140" cy="400" r="32" fill="#4caf50" stroke="#2e7d32" stroke-width="3"/>
+        <text x="140" y="395" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Wind</text>
+        <text x="140" y="410" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">0.3</text>
+        <text x="140" y="445" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">15 km/h (light)</text>
+      </g>
+    </g>
+
+    <!-- Connections with varying weights -->
+    <g>
+      <!-- Humidity has highest weight (thicker lines to Rain) -->
+      <line x1="175" y1="180" x2="375" y2="240" stroke="#3498db" stroke-width="1.5" opacity="0.5"/>
+      <line x1="175" y1="290" x2="375" y2="240" stroke="#e74c3c" stroke-width="4"/>
+      <line x1="175" y1="400" x2="375" y2="240" stroke="#3498db" stroke-width="1" opacity="0.5"/>
+
+      <line x1="175" y1="180" x2="375" y2="360" stroke="#3498db" stroke-width="2" opacity="0.6"/>
+      <line x1="175" y1="290" x2="375" y2="360" stroke="#e74c3c" stroke-width="3.5"/>
+      <line x1="175" y1="400" x2="375" y2="360" stroke="#3498db" stroke-width="1.5" opacity="0.5"/>
+
+      <!-- Weight labels -->
+      <text x="280" y="200" font-family="Monaco, monospace" font-size="8" fill="#888">w=0.2</text>
+      <text x="260" y="260" font-family="Monaco, monospace" font-size="9" fill="#e74c3c" font-weight="bold">w=0.8 (high!)</text>
+      <text x="280" y="330" font-family="Monaco, monospace" font-size="8" fill="#888">w=0.1</text>
+    </g>
+
+    <!-- Output Layer -->
+    <g>
+      <text x="400" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1565c0">
+        Predictions
+      </text>
+
+      <!-- Rain prediction -->
+      <g>
+        <circle cx="400" cy="240" r="40" fill="#2196f3" stroke="#1565c0" stroke-width="3"/>
+        <text x="400" y="235" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Rain</text>
+        <text x="400" y="252" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">0.85</text>
+        <text x="400" y="295" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1565c0" font-weight="bold">85% likely</text>
+      </g>
+
+      <!-- Clouds prediction -->
+      <g>
+        <circle cx="400" cy="360" r="40" fill="#2196f3" stroke="#1565c0" stroke-width="3"/>
+        <text x="400" y="355" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Clouds</text>
+        <text x="400" y="372" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">0.92</text>
+        <text x="400" y="415" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1565c0" font-weight="bold">92% likely</text>
+      </g>
+    </g>
+
+    <!-- Explanation boxes -->
+    <g>
+      <!-- Weight importance -->
+      <rect x="500" y="130" width="320" height="100" fill="white" stroke="#e74c3c" stroke-width="2" rx="8"/>
+      <text x="660" y="155" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#c62828">
+        Why Humidity Has Highest Weight?
+      </text>
+      <text x="515" y="180" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        Humidity is the strongest predictor of rain.
+      </text>
+      <text x="515" y="200" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        The network learns this during training by
+      </text>
+      <text x="515" y="220" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        adjusting weights to minimize errors.
+      </text>
+
+      <!-- Bias explanation -->
+      <rect x="500" y="250" width="320" height="90" fill="white" stroke="#9c27b0" stroke-width="2" rx="8"/>
+      <text x="660" y="275" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+        What About Bias?
+      </text>
+      <text x="515" y="300" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        If this is a tropical region, rain is common.
+      </text>
+      <text x="515" y="320" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        A positive bias accounts for this baseline
+      </text>
+      <text x="515" y="340" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        probability even when features are low.
+      </text>
+
+      <!-- Code box -->
+      <rect x="500" y="360" width="320" height="95" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="8"/>
+      <text x="660" y="385" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+        PyTorch Code
+      </text>
+      <text x="515" y="408" font-family="Monaco, monospace" font-size="9" fill="#555">
+        weather = torch.tensor([[0.7, 0.9, 0.3]])
+      </text>
+      <text x="515" y="426" font-family="Monaco, monospace" font-size="9" fill="#555">
+        network = nn.Linear(3, 2)
+      </text>
+      <text x="515" y="444" font-family="Monaco, monospace" font-size="9" fill="#555">
+        prediction = network(weather)
+      </text>
+    </g>
+  </g>
+</svg>

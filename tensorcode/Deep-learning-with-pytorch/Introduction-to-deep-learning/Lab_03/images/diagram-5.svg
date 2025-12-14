@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <!-- White background -->
+  <rect width="800" height="450" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Calculating Model Parameters
+  </text>
+
+  <!-- Example Network -->
+  <g>
+    <text x="400" y="60" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">
+      Network: 8 → 4 → 2 (input → hidden → output)
+    </text>
+  </g>
+
+  <!-- Layer 1 Calculation -->
+  <g>
+    <rect x="50" y="80" width="700" height="100" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="8"/>
+    <text x="70" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0">
+      Layer 1: nn.Linear(8, 4)
+    </text>
+
+    <!-- Visualization -->
+    <g>
+      <text x="90" y="130" font-family="Arial, sans-serif" font-size="11" fill="#555">Weights:</text>
+      <rect x="150" y="115" width="80" height="50" fill="#2196f3" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+      <text x="190" y="145" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">
+        4 × 8 = 32
+      </text>
+
+      <text x="260" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">+</text>
+
+      <text x="300" y="130" font-family="Arial, sans-serif" font-size="11" fill="#555">Biases:</text>
+      <rect x="360" y="130" width="50" height="25" fill="#64b5f6" stroke="#42a5f5" stroke-width="1.5" rx="3"/>
+      <text x="385" y="148" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">4</text>
+
+      <text x="440" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">=</text>
+
+      <rect x="480" y="120" width="100" height="45" fill="#1565c0" stroke="#0d47a1" stroke-width="2" rx="5"/>
+      <text x="530" y="148" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+        36 params
+      </text>
+    </g>
+  </g>
+
+  <!-- Layer 2 Calculation -->
+  <g>
+    <rect x="50" y="200" width="700" height="100" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="8"/>
+    <text x="70" y="225" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e65100">
+      Layer 2: nn.Linear(4, 2)
+    </text>
+
+    <!-- Visualization -->
+    <g>
+      <text x="90" y="250" font-family="Arial, sans-serif" font-size="11" fill="#555">Weights:</text>
+      <rect x="150" y="235" width="80" height="50" fill="#ff9800" stroke="#e65100" stroke-width="1.5" rx="3"/>
+      <text x="190" y="265" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">
+        2 × 4 = 8
+      </text>
+
+      <text x="260" y="265" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">+</text>
+
+      <text x="300" y="250" font-family="Arial, sans-serif" font-size="11" fill="#555">Biases:</text>
+      <rect x="360" y="250" width="50" height="25" fill="#ffb74d" stroke="#fb8c00" stroke-width="1.5" rx="3"/>
+      <text x="385" y="268" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">2</text>
+
+      <text x="440" y="265" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">=</text>
+
+      <rect x="480" y="240" width="100" height="45" fill="#e65100" stroke="#bf360c" stroke-width="2" rx="5"/>
+      <text x="530" y="268" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+        10 params
+      </text>
+    </g>
+  </g>
+
+  <!-- Total -->
+  <g>
+    <rect x="150" y="320" width="500" height="90" fill="#e8f5e9" stroke="#4caf50" stroke-width="3" rx="8"/>
+    <text x="400" y="350" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+      Total Parameters
+    </text>
+
+    <text x="400" y="380" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+      36 + 10 = 46 parameters
+    </text>
+  </g>
+
+  <!-- Formula -->
+  <g>
+    <rect x="100" y="420" width="600" height="25" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="4"/>
+    <text x="400" y="438" font-family="Monaco, monospace" font-size="11" text-anchor="middle" fill="#2c3e50" font-weight="bold">
+      Formula: params = (in_features × out_features) + out_features
+    </text>
+  </g>
+</svg>

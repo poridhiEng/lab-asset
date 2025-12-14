@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- Background -->
+  <rect width="500" height="300" fill="#fafafa"/>
+
+  <!-- Title -->
+  <text x="250" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#f39c12">
+    Too Small Learning Rate — Slow Convergence
+  </text>
+
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="460" y2="250" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="250" x2="50" y2="40" stroke="#333" stroke-width="2"/>
+
+  <!-- Axis labels -->
+  <text x="255" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    Weight (w)
+  </text>
+  <text x="20" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333" transform="rotate(-90, 20, 145)">
+    Loss
+  </text>
+
+  <!-- Loss curve with local minimum -->
+  <path d="M 60 100
+           Q 100 180, 140 200
+           Q 170 215, 190 210
+           Q 210 205, 230 215
+           Q 260 230, 300 220
+           Q 340 210, 380 248
+           Q 400 252, 420 248
+           Q 450 230, 470 180"
+        fill="none"
+        stroke="#3498db"
+        stroke-width="3"
+        stroke-linecap="round"/>
+
+  <!-- Local minimum point -->
+  <circle cx="190" cy="210" r="5" fill="#f39c12" stroke="#fff" stroke-width="2"/>
+  <text x="190" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">
+    Local Min
+  </text>
+
+  <!-- Global minimum point -->
+  <circle cx="400" cy="252" r="6" fill="#27ae60" stroke="#fff" stroke-width="2"/>
+  <text x="400" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">
+    Global Min
+  </text>
+
+  <!-- Start point -->
+  <circle cx="90" cy="150" r="8" fill="#f39c12" stroke="#fff" stroke-width="2"/>
+  <text x="90" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12" font-weight="bold">
+    Start
+  </text>
+
+  <!-- Tiny steps path (many small dots) -->
+  <circle cx="100" cy="160" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="108" cy="168" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="115" cy="175" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="121" cy="181" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="127" cy="186" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="133" cy="190" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="139" cy="194" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="145" cy="197" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="151" cy="200" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="157" cy="203" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="163" cy="205" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="169" cy="207" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="175" cy="208" r="4" fill="#f39c12" opacity="0.8"/>
+  <circle cx="181" cy="209" r="4" fill="#f39c12" opacity="0.8"/>
+
+  <!-- Stuck indicator -->
+  <text x="190" cy="210" r="6" fill="#f39c12" stroke="#fff" stroke-width="2"/>
+  <rect x="130" y="75" width="120" height="22" rx="4" fill="#f39c12" opacity="0.15"/>
+  <text x="190" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f39c12" font-style="italic">
+    Stuck here!
+  </text>
+
+  <!-- Arrow pointing to stuck location -->
+  <line x1="190" y1="97" x2="190" y2="200" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <!-- Epoch counter -->
+  <rect x="70" y="55" width="90" height="20" rx="3" fill="#666" opacity="0.1"/>
+  <text x="115" y="69" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    10,000 epochs...
+  </text>
+
+  <!-- Never reaches global minimum annotation -->
+  <text x="400" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60" font-style="italic">
+    Never reached
+  </text>
+  <line x1="400" y1="185" x2="400" y2="240" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+</svg>

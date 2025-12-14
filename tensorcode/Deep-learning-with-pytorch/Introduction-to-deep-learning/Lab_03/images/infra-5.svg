@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <!-- White background -->
+  <rect width="900" height="450" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Parameters Per Neuron: N + 1
+  </text>
+
+  <!-- Subtitle -->
+  <text x="450" y="58" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#7f8c8d">
+    Each neuron has N weights (from inputs) + 1 bias
+  </text>
+
+  <!-- Main visualization -->
+  <g>
+    <rect x="50" y="80" width="500" height="280" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2" rx="10"/>
+
+    <!-- Input neurons -->
+    <g>
+      <text x="120" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1565c0">
+        Inputs (N=3)
+      </text>
+
+      <circle cx="120" cy="150" r="25" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+      <text x="120" y="156" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">x₁</text>
+
+      <circle cx="120" cy="220" r="25" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+      <text x="120" y="226" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">x₂</text>
+
+      <circle cx="120" cy="290" r="25" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+      <text x="120" y="296" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">x₃</text>
+    </g>
+
+    <!-- Single output neuron -->
+    <g>
+      <text x="400" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+        One Neuron
+      </text>
+
+      <circle cx="400" cy="220" r="40" fill="#4caf50" stroke="#2e7d32" stroke-width="3"/>
+      <text x="400" y="215" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Σ + b</text>
+      <text x="400" y="235" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">(sum + bias)</text>
+    </g>
+
+    <!-- Weighted connections -->
+    <g>
+      <!-- Weight 1 -->
+      <line x1="145" y1="150" x2="360" y2="200" stroke="#e74c3c" stroke-width="3"/>
+      <rect x="220" y="155" width="50" height="22" fill="#e74c3c" rx="3"/>
+      <text x="245" y="171" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₁</text>
+
+      <!-- Weight 2 -->
+      <line x1="145" y1="220" x2="360" y2="220" stroke="#e74c3c" stroke-width="3"/>
+      <rect x="220" y="205" width="50" height="22" fill="#e74c3c" rx="3"/>
+      <text x="245" y="221" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₂</text>
+
+      <!-- Weight 3 -->
+      <line x1="145" y1="290" x2="360" y2="240" stroke="#e74c3c" stroke-width="3"/>
+      <rect x="220" y="255" width="50" height="22" fill="#e74c3c" rx="3"/>
+      <text x="245" y="271" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₃</text>
+    </g>
+
+    <!-- Bias -->
+    <g>
+      <line x1="400" y1="130" x2="400" y2="180" stroke="#9c27b0" stroke-width="3"/>
+      <rect x="375" y="120" width="50" height="22" fill="#9c27b0" rx="3"/>
+      <text x="400" y="136" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">b</text>
+      <text x="400" y="110" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#6a1b9a">bias (+1)</text>
+    </g>
+
+    <!-- Output arrow -->
+    <path d="M 440 220 L 500 220" stroke="#4caf50" stroke-width="3" fill="none" marker-end="url(#outArrow)"/>
+    <text x="510" y="225" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">y</text>
+
+    <!-- Formula -->
+    <text x="280" y="340" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#2c3e50">
+      y = w₁·x₁ + w₂·x₂ + w₃·x₃ + b
+    </text>
+  </g>
+
+  <!-- Parameter count box -->
+  <g>
+    <rect x="580" y="80" width="280" height="280" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="10"/>
+    <text x="720" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+      Parameter Count
+    </text>
+
+    <!-- Weights count -->
+    <rect x="610" y="130" width="220" height="60" fill="#ffebee" stroke="#e74c3c" stroke-width="2" rx="5"/>
+    <text x="720" y="155" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#c62828">
+      Weights: N = 3
+    </text>
+    <text x="720" y="175" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">
+      (one per input connection)
+    </text>
+
+    <!-- Bias count -->
+    <rect x="610" y="200" width="220" height="60" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="5"/>
+    <text x="720" y="225" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+      Bias: 1
+    </text>
+    <text x="720" y="245" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">
+      (one per neuron)
+    </text>
+
+    <!-- Total -->
+    <rect x="610" y="280" width="220" height="60" fill="#4caf50" stroke="#2e7d32" stroke-width="2" rx="5"/>
+    <text x="720" y="305" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+      Total: N + 1 = 4
+    </text>
+    <text x="720" y="325" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      parameters per neuron
+    </text>
+  </g>
+
+  <!-- Layer example -->
+  <g>
+    <rect x="100" y="380" width="700" height="55" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="5"/>
+    <text x="450" y="405" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+      For a layer with 3 inputs and 2 outputs:
+    </text>
+    <text x="450" y="425" font-family="Monaco, monospace" font-size="12" text-anchor="middle" fill="#555">
+      2 neurons × (3 weights + 1 bias) = 2 × 4 = 8 parameters
+    </text>
+  </g>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="outArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4caf50"/>
+    </marker>
+  </defs>
+</svg>

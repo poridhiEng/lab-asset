@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <!-- White background -->
+  <rect width="800" height="450" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Neural Network Architecture
+  </text>
+
+  <!-- Input Layer -->
+  <g>
+    <rect x="50" y="100" width="120" height="250" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="8"/>
+    <text x="110" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1565c0">
+      Input Layer
+    </text>
+
+    <circle cx="110" cy="140" r="18" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+    <text x="110" y="147" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">x₁</text>
+
+    <circle cx="110" cy="190" r="18" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+    <text x="110" y="197" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">x₂</text>
+
+    <circle cx="110" cy="240" r="18" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+    <text x="110" y="247" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">x₃</text>
+
+    <circle cx="110" cy="290" r="18" fill="#2196f3" stroke="#1565c0" stroke-width="2"/>
+    <text x="110" y="297" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">x₄</text>
+
+    <text x="110" y="370" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#555">
+      Size: Number of
+    </text>
+    <text x="110" y="385" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#555">
+      features in data
+    </text>
+  </g>
+
+  <!-- Hidden Layer 1 -->
+  <g>
+    <rect x="250" y="80" width="140" height="290" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="8"/>
+    <text x="320" y="60" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">
+      Hidden Layer 1
+    </text>
+
+    <circle cx="320" cy="120" r="16" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+    <text x="320" y="126" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₁</text>
+
+    <circle cx="320" cy="170" r="16" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+    <text x="320" y="176" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₂</text>
+
+    <circle cx="320" cy="220" r="16" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+    <text x="320" y="226" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₃</text>
+
+    <circle cx="320" cy="270" r="16" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+    <text x="320" y="276" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₄</text>
+
+    <circle cx="320" cy="320" r="16" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+    <text x="320" y="326" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₅</text>
+
+    <text x="320" y="395" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#555">
+      Processes & transforms
+    </text>
+    <text x="320" y="410" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#555">
+      data (learnable)
+    </text>
+  </g>
+
+  <!-- Hidden Layer 2 -->
+  <g>
+    <rect x="470" y="110" width="140" height="230" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="8"/>
+    <text x="540" y="90" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+      Hidden Layer 2
+    </text>
+
+    <circle cx="540" cy="150" r="16" fill="#9c27b0" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="540" y="156" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₆</text>
+
+    <circle cx="540" cy="200" r="16" fill="#9c27b0" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="540" y="206" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₇</text>
+
+    <circle cx="540" cy="250" r="16" fill="#9c27b0" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="540" y="256" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₈</text>
+
+    <circle cx="540" cy="300" r="16" fill="#9c27b0" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="540" y="306" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">h₉</text>
+
+    <text x="540" y="365" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#555">
+      Deeper layers learn
+    </text>
+    <text x="540" y="380" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#555">
+      abstract features
+    </text>
+  </g>
+
+  <!-- Output Layer -->
+  <g>
+    <rect x="680" y="150" width="100" height="150" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="8"/>
+    <text x="730" y="135" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+      Output Layer
+    </text>
+
+    <circle cx="730" cy="190" r="18" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+    <text x="730" y="197" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">ŷ₁</text>
+
+    <circle cx="730" cy="245" r="18" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+    <text x="730" y="252" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">ŷ₂</text>
+
+    <text x="730" y="325" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#555">
+      Size: Number
+    </text>
+    <text x="730" y="340" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#555">
+      of predictions
+    </text>
+  </g>
+
+  <!-- Connections (sample) -->
+  <!-- From input to hidden 1 -->
+  <line x1="128" y1="140" x2="304" y2="120" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="128" y1="140" x2="304" y2="170" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="128" y1="190" x2="304" y2="120" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="128" y1="190" x2="304" y2="220" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="128" y1="240" x2="304" y2="170" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="128" y1="240" x2="304" y2="270" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+
+  <!-- From hidden 1 to hidden 2 -->
+  <line x1="336" y1="120" x2="524" y2="150" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="336" y1="170" x2="524" y2="200" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="336" y1="220" x2="524" y2="250" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="336" y1="270" x2="524" y2="200" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="336" y1="320" x2="524" y2="300" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+
+  <!-- From hidden 2 to output -->
+  <line x1="556" y1="150" x2="712" y2="190" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="556" y1="200" x2="712" y2="245" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="556" y1="250" x2="712" y2="190" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+  <line x1="556" y1="300" x2="712" y2="245" stroke="#95a5a6" stroke-width="1" opacity="0.3"/>
+
+  <!-- Bottom note -->
+  <text x="400" y="440" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d" font-style="italic">
+    Each connection has a learnable weight; each neuron has a learnable bias
+  </text>
+</svg>

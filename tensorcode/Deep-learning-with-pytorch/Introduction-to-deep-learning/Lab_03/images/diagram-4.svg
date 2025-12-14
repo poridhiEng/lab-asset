@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- White background -->
+  <rect width="800" height="400" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Weights and Biases in Neural Networks
+  </text>
+
+  <!-- Weights Section -->
+  <g>
+    <rect x="50" y="60" width="350" height="300" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="8"/>
+    <text x="225" y="90" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1565c0">
+      Weights (W)
+    </text>
+
+    <!-- Weight matrix visualization -->
+    <rect x="100" y="110" width="250" height="180" fill="white" stroke="#2196f3" stroke-width="1.5" rx="5"/>
+
+    <!-- Matrix grid -->
+    <text x="225" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555" font-weight="bold">
+      Weight Matrix (2×3)
+    </text>
+
+    <!-- Row 1 -->
+    <rect x="120" y="150" width="60" height="40" fill="#2196f3" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="150" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₁₁</text>
+
+    <rect x="190" y="150" width="60" height="40" fill="#2196f3" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="220" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₁₂</text>
+
+    <rect x="260" y="150" width="60" height="40" fill="#2196f3" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="290" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₁₃</text>
+
+    <!-- Row 2 -->
+    <rect x="120" y="200" width="60" height="40" fill="#64b5f6" stroke="#42a5f5" stroke-width="1.5" rx="3"/>
+    <text x="150" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₂₁</text>
+
+    <rect x="190" y="200" width="60" height="40" fill="#64b5f6" stroke="#42a5f5" stroke-width="1.5" rx="3"/>
+    <text x="220" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₂₂</text>
+
+    <rect x="260" y="200" width="60" height="40" fill="#64b5f6" stroke="#42a5f5" stroke-width="1.5" rx="3"/>
+    <text x="290" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">w₂₃</text>
+
+    <!-- Description -->
+    <text x="70" y="310" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      • Control feature importance
+    </text>
+    <text x="70" y="328" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      • Large weight = important feature
+    </text>
+    <text x="70" y="346" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      • Learned during training
+    </text>
+  </g>
+
+  <!-- Biases Section -->
+  <g>
+    <rect x="430" y="60" width="330" height="300" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="8"/>
+    <text x="595" y="90" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#e65100">
+      Biases (b)
+    </text>
+
+    <!-- Bias vector visualization -->
+    <rect x="480" y="110" width="230" height="180" fill="white" stroke="#ff9800" stroke-width="1.5" rx="5"/>
+
+    <text x="595" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555" font-weight="bold">
+      Bias Vector (2,)
+    </text>
+
+    <!-- Bias 1 -->
+    <rect x="510" y="160" width="170" height="45" fill="#ff9800" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="595" y="188" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">
+      b₁
+    </text>
+
+    <!-- Bias 2 -->
+    <rect x="510" y="220" width="170" height="45" fill="#ffb74d" stroke="#fb8c00" stroke-width="1.5" rx="3"/>
+    <text x="595" y="248" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">
+      b₂
+    </text>
+
+    <!-- Description -->
+    <text x="450" y="310" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      • Baseline activation
+    </text>
+    <text x="450" y="328" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      • Independent of input
+    </text>
+    <text x="450" y="346" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      • Allows activation when input=0
+    </text>
+  </g>
+
+  <!-- Bottom formula -->
+  <text x="400" y="390" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50" font-weight="bold">
+    Formula: output = input @ W.T + b
+  </text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 220">
+  <!-- Background -->
+  <rect width="650" height="220" fill="white"/>
+
+  <!-- Title -->
+  <text x="325" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000000" text-anchor="middle">PyTorch Save and Load Methods</text>
+  <line x1="50" y1="45" x2="600" y2="45" stroke="#000000" stroke-width="1"/>
+
+  <!-- Header Row -->
+  <text x="60" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Method</text>
+  <text x="350" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">What it does</text>
+  <line x1="50" y1="85" x2="600" y2="85" stroke="#000000" stroke-width="1"/>
+
+  <!-- Row 1 -->
+  <text x="60" y="115" font-family="Courier New, monospace" font-size="13" fill="#000000">torch.save(obj, f)</text>
+  <text x="350" y="115" font-family="Arial, sans-serif" font-size="13" fill="#000000">Saves a serialized object to disk</text>
+
+  <!-- Row 2 -->
+  <text x="60" y="150" font-family="Courier New, monospace" font-size="13" fill="#000000">torch.load(f)</text>
+  <text x="350" y="150" font-family="Arial, sans-serif" font-size="13" fill="#000000">Loads a saved object from disk</text>
+
+  <!-- Row 3 -->
+  <text x="60" y="185" font-family="Courier New, monospace" font-size="13" fill="#000000">model.load_state_dict(state_dict)</text>
+  <text x="350" y="185" font-family="Arial, sans-serif" font-size="13" fill="#000000">Loads parameters into a model</text>
+
+  <!-- Vertical line separator -->
+  <line x1="320" y1="55" x2="320" y2="200" stroke="#000000" stroke-width="1"/>
+</svg>

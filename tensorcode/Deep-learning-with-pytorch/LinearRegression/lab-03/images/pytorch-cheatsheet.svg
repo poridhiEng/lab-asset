@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1020">
+  <!-- Background -->
+  <rect width="800" height="1020" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#000000" text-anchor="middle">PyTorch API Cheat Sheet</text>
+  <line x1="50" y1="50" x2="750" y2="50" stroke="#000000" stroke-width="2"/>
+
+  <!-- Tensor Operations -->
+  <text x="50" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000000">Tensor Operations</text>
+  <line x1="50" y1="95" x2="250" y2="95" stroke="#000000" stroke-width="1"/>
+
+  <text x="50" y="120" font-family="Courier New, monospace" font-size="12" fill="#000000">torch.arange(start, end, step)</text>
+  <text x="320" y="120" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Create evenly spaced values</text>
+
+  <text x="50" y="145" font-family="Courier New, monospace" font-size="12" fill="#000000">torch.randn(size)</text>
+  <text x="320" y="145" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Random numbers from normal distribution</text>
+
+  <text x="50" y="170" font-family="Courier New, monospace" font-size="12" fill="#000000">tensor.unsqueeze(dim)</text>
+  <text x="320" y="170" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Add dimension at specified position</text>
+
+  <text x="50" y="195" font-family="Courier New, monospace" font-size="12" fill="#000000">tensor.squeeze()</text>
+  <text x="320" y="195" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Remove dimensions of size 1</text>
+
+  <text x="50" y="220" font-family="Courier New, monospace" font-size="12" fill="#000000">tensor.item()</text>
+  <text x="320" y="220" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Extract Python scalar from tensor</text>
+
+  <text x="50" y="245" font-family="Courier New, monospace" font-size="12" fill="#000000">tensor.detach().numpy()</text>
+  <text x="320" y="245" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Convert tensor to NumPy array</text>
+
+  <text x="50" y="270" font-family="Courier New, monospace" font-size="12" fill="#000000">torch.manual_seed(seed)</text>
+  <text x="320" y="270" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Set random seed for reproducibility</text>
+
+  <text x="50" y="295" font-family="Courier New, monospace" font-size="12" fill="#000000">torch.allclose(t1, t2)</text>
+  <text x="320" y="295" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Check if tensors are equal within tolerance</text>
+
+  <!-- Model Building -->
+  <text x="50" y="340" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000000">Model Building (torch.nn)</text>
+  <line x1="50" y1="350" x2="300" y2="350" stroke="#000000" stroke-width="1"/>
+
+  <text x="50" y="375" font-family="Courier New, monospace" font-size="12" fill="#000000">nn.Module</text>
+  <text x="320" y="375" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Base class for all neural networks</text>
+
+  <text x="50" y="400" font-family="Courier New, monospace" font-size="12" fill="#000000">nn.Parameter(tensor, requires_grad)</text>
+  <text x="320" y="400" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Learnable parameter tracked by model</text>
+
+  <text x="50" y="425" font-family="Courier New, monospace" font-size="12" fill="#000000">model.forward(x)</text>
+  <text x="320" y="425" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Define data flow (called via model(x))</text>
+
+  <text x="50" y="450" font-family="Courier New, monospace" font-size="12" fill="#000000">model.parameters()</text>
+  <text x="320" y="450" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Iterator over all learnable parameters</text>
+
+  <text x="50" y="475" font-family="Courier New, monospace" font-size="12" fill="#000000">model.state_dict()</text>
+  <text x="320" y="475" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Dictionary of all parameters and values</text>
+
+  <text x="50" y="500" font-family="Courier New, monospace" font-size="12" fill="#000000">model.load_state_dict(dict)</text>
+  <text x="320" y="500" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Load parameters from state dict</text>
+
+  <text x="50" y="525" font-family="Courier New, monospace" font-size="12" fill="#000000">model.train()</text>
+  <text x="320" y="525" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Set model to training mode</text>
+
+  <text x="50" y="550" font-family="Courier New, monospace" font-size="12" fill="#000000">model.eval()</text>
+  <text x="320" y="550" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Set model to evaluation mode</text>
+
+  <!-- Loss Functions -->
+  <text x="50" y="595" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000000">Loss Functions</text>
+  <line x1="50" y1="605" x2="180" y2="605" stroke="#000000" stroke-width="1"/>
+
+  <text x="50" y="630" font-family="Courier New, monospace" font-size="12" fill="#000000">nn.L1Loss()</text>
+  <text x="320" y="630" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Mean Absolute Error (MAE)</text>
+
+  <text x="50" y="655" font-family="Courier New, monospace" font-size="12" fill="#000000">nn.MSELoss()</text>
+  <text x="320" y="655" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Mean Squared Error</text>
+
+  <!-- Optimizers -->
+  <text x="50" y="700" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000000">Optimizers (torch.optim)</text>
+  <line x1="50" y1="710" x2="270" y2="710" stroke="#000000" stroke-width="1"/>
+
+  <text x="50" y="735" font-family="Courier New, monospace" font-size="12" fill="#000000">torch.optim.SGD(params, lr)</text>
+  <text x="320" y="735" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Stochastic Gradient Descent optimizer</text>
+
+  <text x="50" y="760" font-family="Courier New, monospace" font-size="12" fill="#000000">optimizer.zero_grad()</text>
+  <text x="320" y="760" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Clear gradients before backward pass</text>
+
+  <text x="50" y="785" font-family="Courier New, monospace" font-size="12" fill="#000000">optimizer.step()</text>
+  <text x="320" y="785" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Update parameters using gradients</text>
+
+  <!-- Training Loop -->
+  <text x="50" y="830" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000000">Training Loop</text>
+  <line x1="50" y1="840" x2="180" y2="840" stroke="#000000" stroke-width="1"/>
+
+  <text x="50" y="865" font-family="Courier New, monospace" font-size="12" fill="#000000">loss.backward()</text>
+  <text x="320" y="865" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Compute gradients via backpropagation</text>
+
+  <text x="50" y="890" font-family="Courier New, monospace" font-size="12" fill="#000000">torch.inference_mode()</text>
+  <text x="320" y="890" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Context manager for faster inference</text>
+
+  <!-- Save and Load -->
+  <text x="50" y="935" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000000">Save and Load</text>
+  <line x1="50" y1="945" x2="180" y2="945" stroke="#000000" stroke-width="1"/>
+
+  <text x="50" y="970" font-family="Courier New, monospace" font-size="12" fill="#000000">torch.save(obj, path)</text>
+  <text x="320" y="970" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Save state_dict to disk (.pth)</text>
+
+  <text x="50" y="995" font-family="Courier New, monospace" font-size="12" fill="#000000">torch.load(path)</text>
+  <text x="320" y="995" font-family="Arial, sans-serif" font-size="12" fill="#000000">— Load saved object from disk</text>
+</svg>

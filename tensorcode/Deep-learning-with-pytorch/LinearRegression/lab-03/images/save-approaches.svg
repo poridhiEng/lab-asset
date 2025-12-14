@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 260">
+  <!-- Background -->
+  <rect width="850" height="260" fill="white"/>
+
+  <!-- Title -->
+  <text x="425" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#000000" text-anchor="middle">Two Ways to Save a PyTorch Model</text>
+  <line x1="50" y1="55" x2="800" y2="55" stroke="#000000" stroke-width="1"/>
+
+  <!-- Header Row -->
+  <text x="60" y="95" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#000000">Approach</text>
+  <text x="300" y="95" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#228B22">Pros</text>
+  <text x="560" y="95" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#DC143C">Cons</text>
+  <line x1="50" y1="110" x2="800" y2="110" stroke="#000000" stroke-width="1"/>
+
+  <!-- Row 1: state_dict (Recommended) -->
+  <text x="60" y="150" font-family="Arial, sans-serif" font-size="18" fill="#000000">Save state_dict()</text>
+  <text x="60" y="175" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#000000">(Recommended)</text>
+  <text x="300" y="160" font-family="Arial, sans-serif" font-size="18" fill="#228B22">Flexible, portable</text>
+  <text x="560" y="160" font-family="Arial, sans-serif" font-size="18" fill="#DC143C">Need model class to load</text>
+
+  <!-- Row 2: Entire model -->
+  <text x="60" y="225" font-family="Arial, sans-serif" font-size="18" fill="#000000">Save entire model</text>
+  <text x="300" y="225" font-family="Arial, sans-serif" font-size="18" fill="#228B22">Simpler syntax</text>
+  <text x="560" y="225" font-family="Arial, sans-serif" font-size="18" fill="#DC143C">Breaks if code changes</text>
+
+  <!-- Vertical line separators -->
+  <line x1="280" y1="65" x2="280" y2="245" stroke="#000000" stroke-width="1"/>
+  <line x1="540" y1="65" x2="540" y2="245" stroke="#000000" stroke-width="1"/>
+</svg>

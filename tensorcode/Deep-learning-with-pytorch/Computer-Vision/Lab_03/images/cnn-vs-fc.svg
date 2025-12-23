@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- White Background -->
+  <rect width="100%" height="100%" fill="white"/>
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2d3748">CNN vs Fully Connected Networks for Images</text>
+
+  <!-- Left side: FC Network -->
+  <rect x="30" y="60" width="350" height="300" rx="10" fill="#fed7e2" stroke="#ed64a6" stroke-width="2"/>
+  <text x="205" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#97266d">Fully Connected (FC)</text>
+  <text x="205" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#b83280">(Labs 01 &amp; 02)</text>
+
+  <!-- FC diagram -->
+  <g transform="translate(50, 130)">
+    <!-- Image -->
+    <rect x="0" y="30" width="60" height="60" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+    <text x="30" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#553c9a">28×28</text>
+    <text x="30" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">image</text>
+
+    <!-- Arrow -->
+    <line x1="65" y1="60" x2="95" y2="60" stroke="#4a5568" stroke-width="2" marker-end="url(#arrFC)"/>
+    <defs>
+      <marker id="arrFC" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#4a5568"/>
+      </marker>
+    </defs>
+
+    <!-- Flatten -->
+    <rect x="100" y="20" width="30" height="80" fill="#fef3c7" stroke="#ecc94b"/>
+    <text x="115" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#744210" transform="rotate(-90 115 65)">Flatten</text>
+
+    <!-- Arrow -->
+    <line x1="135" y1="60" x2="165" y2="60" stroke="#4a5568" stroke-width="2" marker-end="url(#arrFC)"/>
+
+    <!-- All connections (many lines) -->
+    <rect x="170" y="10" width="120" height="100" fill="#f7fafc" stroke="#e2e8f0" rx="5"/>
+    <text x="230" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">784 × hidden</text>
+    <text x="230" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">connections</text>
+    <!-- Lines representing connections -->
+    <line x1="175" y1="60" x2="285" y2="25" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="175" y1="60" x2="285" y2="40" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="175" y1="60" x2="285" y2="55" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="175" y1="60" x2="285" y2="70" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="175" y1="60" x2="285" y2="85" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="175" y1="60" x2="285" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="230" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">(every pixel to every neuron)</text>
+  </g>
+
+  <!-- FC Problems -->
+  <g transform="translate(60, 270)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#97266d">Problems:</text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="10" fill="#702459">✗ Too many parameters</text>
+    <text x="0" y="38" font-family="Arial, sans-serif" font-size="10" fill="#702459">✗ No spatial awareness</text>
+    <text x="0" y="56" font-family="Arial, sans-serif" font-size="10" fill="#702459">✗ Not translation invariant</text>
+    <text x="0" y="74" font-family="Arial, sans-serif" font-size="10" fill="#702459">✗ Overfits easily</text>
+  </g>
+
+  <!-- Right side: CNN -->
+  <rect x="420" y="60" width="350" height="300" rx="10" fill="#c6f6d5" stroke="#48bb78" stroke-width="2"/>
+  <text x="595" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#276749">Convolutional Neural Network</text>
+  <text x="595" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#38a169">(Lab 03)</text>
+
+  <!-- CNN diagram -->
+  <g transform="translate(440, 130)">
+    <!-- Image -->
+    <rect x="0" y="30" width="60" height="60" fill="#e6fffa" stroke="#38b2ac" stroke-width="2"/>
+    <text x="30" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#234e52">28×28</text>
+    <text x="30" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">image</text>
+
+    <!-- Arrow -->
+    <line x1="65" y1="60" x2="85" y2="60" stroke="#4a5568" stroke-width="2" marker-end="url(#arrFC)"/>
+
+    <!-- Kernel/Filter -->
+    <rect x="90" y="45" width="30" height="30" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+    <text x="105" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#44337a">3×3</text>
+
+    <!-- Arrow -->
+    <line x1="125" y1="60" x2="145" y2="60" stroke="#4a5568" stroke-width="2" marker-end="url(#arrFC)"/>
+
+    <!-- Feature maps -->
+    <rect x="150" y="20" width="50" height="50" fill="#bee3f8" stroke="#4299e1" stroke-width="1"/>
+    <rect x="155" y="25" width="50" height="50" fill="#bee3f8" stroke="#4299e1" stroke-width="1"/>
+    <rect x="160" y="30" width="50" height="50" fill="#bee3f8" stroke="#4299e1" stroke-width="2"/>
+    <text x="185" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#2c5282">Feature</text>
+    <text x="185" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#2c5282">Maps</text>
+
+    <!-- Arrow -->
+    <line x1="215" y1="60" x2="235" y2="60" stroke="#4a5568" stroke-width="2" marker-end="url(#arrFC)"/>
+
+    <!-- Pooling -->
+    <rect x="240" y="35" width="35" height="35" fill="#fed7e2" stroke="#ed64a6" stroke-width="2"/>
+    <text x="257" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#97266d">Pool</text>
+
+    <!-- Arrow -->
+    <line x1="280" y1="52" x2="300" y2="52" stroke="#4a5568" stroke-width="2" marker-end="url(#arrFC)"/>
+
+    <!-- Output -->
+    <rect x="305" y="35" width="30" height="35" fill="#fefcbf" stroke="#ecc94b" stroke-width="2"/>
+    <text x="320" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#744210">10</text>
+  </g>
+
+  <!-- CNN text below diagram -->
+  <text x="595" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#38a169">Same filter slides across entire image</text>
+  <text x="595" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#38a169">(parameter sharing!)</text>
+
+  <!-- CNN Benefits -->
+  <g transform="translate(450, 270)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#276749">Benefits:</text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="10" fill="#22543d">✓ Far fewer parameters</text>
+    <text x="0" y="38" font-family="Arial, sans-serif" font-size="10" fill="#22543d">✓ Learns local patterns</text>
+    <text x="0" y="56" font-family="Arial, sans-serif" font-size="10" fill="#22543d">✓ Translation invariant</text>
+    <text x="0" y="74" font-family="Arial, sans-serif" font-size="10" fill="#22543d">✓ Better generalization</text>
+  </g>
+</svg>

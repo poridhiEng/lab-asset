@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350">
+  <!-- White Background -->
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1a202c">Lab 03: CNN and Model Comparison</text>
+
+  <!-- Step 1: Build CNN -->
+  <rect x="40" y="70" width="180" height="120" rx="8" fill="#E6FFFA" stroke="#319795" stroke-width="2"/>
+  <text x="130" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#234E52">1. Build CNN</text>
+  <line x1="60" y1="110" x2="200" y2="110" stroke="#319795" stroke-width="1"/>
+  <text x="130" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#285E61">TinyVGG Architecture</text>
+  <text x="130" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#285E61">Conv2d + MaxPool2d</text>
+  <text x="130" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#285E61">ReLU Activations</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 225 130 L 260 130" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4A5568"/>
+    </marker>
+  </defs>
+
+  <!-- Step 2: Train Model -->
+  <rect x="265" y="70" width="180" height="120" rx="8" fill="#EBF8FF" stroke="#3182CE" stroke-width="2"/>
+  <text x="355" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2A4365">2. Train Model</text>
+  <line x1="285" y1="110" x2="425" y2="110" stroke="#3182CE" stroke-width="1"/>
+  <text x="355" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2C5282">Device-agnostic Code</text>
+  <text x="355" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2C5282">train_step / test_step</text>
+  <text x="355" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2C5282">3 Epochs Training</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 450 130 L 485 130" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3: Compare Models -->
+  <rect x="490" y="70" width="180" height="120" rx="8" fill="#FAF5FF" stroke="#805AD5" stroke-width="2"/>
+  <text x="580" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#44337A">3. Compare All</text>
+  <line x1="510" y1="110" x2="650" y2="110" stroke="#805AD5" stroke-width="1"/>
+  <text x="580" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#553C9A">V0: Baseline (83%)</text>
+  <text x="580" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#553C9A">V1: Non-linear (75%)</text>
+  <text x="580" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#553C9A">V2: CNN (88%)</text>
+
+  <!-- Arrow 3 -->
+  <path d="M 675 130 L 710 130" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4: Evaluate & Save -->
+  <rect x="715" y="70" width="150" height="120" rx="8" fill="#FEFCBF" stroke="#D69E2E" stroke-width="2"/>
+  <text x="790" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#744210">4. Save Model</text>
+  <line x1="735" y1="110" x2="845" y2="110" stroke="#D69E2E" stroke-width="1"/>
+  <text x="790" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#975A16">Confusion Matrix</text>
+  <text x="790" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#975A16">torch.save()</text>
+  <text x="790" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#975A16">Model Inference</text>
+
+  <!-- Results Box -->
+  <rect x="150" y="220" width="600" height="110" rx="10" fill="#C6F6D5" stroke="#38A169" stroke-width="3"/>
+  <text x="450" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#22543D">CNN Results - Best Performance!</text>
+
+  <!-- Result metrics -->
+  <text x="250" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#276749">Test Accuracy</text>
+  <text x="250" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#22543D">~88%</text>
+
+  <text x="450" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#276749">Test Loss</text>
+  <text x="450" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#22543D">~0.33</text>
+
+  <text x="650" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#276749">Train Time</text>
+  <text x="650" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#22543D">~44s</text>
+</svg>

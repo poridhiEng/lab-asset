@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <!-- White Background -->
+  <rect width="100%" height="100%" fill="white"/>
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2d3748">TinyVGG Architecture (FashionMNISTModelV2)</text>
+
+  <!-- Input -->
+  <rect x="20" y="150" width="60" height="80" rx="5" fill="#e6fffa" stroke="#38b2ac" stroke-width="2"/>
+  <text x="50" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#234e52">Input</text>
+  <text x="50" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#285e61">[1,28,28]</text>
+  <text x="50" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">Grayscale</text>
+
+  <!-- Arrow -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <line x1="85" y1="190" x2="110" y2="190" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Block 1 -->
+  <rect x="115" y="80" width="200" height="220" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="215" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#44337a">Block 1</text>
+
+  <!-- Conv1 -->
+  <rect x="130" y="115" width="170" height="35" rx="5" fill="#e9d8fd" stroke="#9f7aea"/>
+  <text x="215" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#44337a">Conv2d(1→10, 3×3, p=1) + ReLU</text>
+
+  <!-- Conv2 -->
+  <rect x="130" y="160" width="170" height="35" rx="5" fill="#e9d8fd" stroke="#9f7aea"/>
+  <text x="215" y="183" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#44337a">Conv2d(10→10, 3×3, p=1) + ReLU</text>
+
+  <!-- MaxPool1 -->
+  <rect x="130" y="205" width="170" height="35" rx="5" fill="#fed7e2" stroke="#ed64a6"/>
+  <text x="215" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#97266d">MaxPool2d(2×2)</text>
+
+  <!-- Output shape from block 1 -->
+  <text x="215" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#718096">Output: [10, 14, 14]</text>
+  <text x="215" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#a0aec0">(size halved)</text>
+
+  <!-- Arrow -->
+  <line x1="320" y1="190" x2="345" y2="190" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Block 2 -->
+  <rect x="350" y="80" width="200" height="220" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="450" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2a4365">Block 2</text>
+
+  <!-- Conv3 -->
+  <rect x="365" y="115" width="170" height="35" rx="5" fill="#bee3f8" stroke="#4299e1"/>
+  <text x="450" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c5282">Conv2d(10→10, 3×3, p=1) + ReLU</text>
+
+  <!-- Conv4 -->
+  <rect x="365" y="160" width="170" height="35" rx="5" fill="#bee3f8" stroke="#4299e1"/>
+  <text x="450" y="183" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c5282">Conv2d(10→10, 3×3, p=1) + ReLU</text>
+
+  <!-- MaxPool2 -->
+  <rect x="365" y="205" width="170" height="35" rx="5" fill="#fed7e2" stroke="#ed64a6"/>
+  <text x="450" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#97266d">MaxPool2d(2×2)</text>
+
+  <!-- Output shape from block 2 -->
+  <text x="450" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#718096">Output: [10, 7, 7]</text>
+  <text x="450" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#a0aec0">(size halved again)</text>
+
+  <!-- Arrow -->
+  <line x1="555" y1="190" x2="580" y2="190" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Classifier -->
+  <rect x="585" y="100" width="150" height="180" rx="10" fill="#fefcbf" stroke="#ecc94b" stroke-width="2"/>
+  <text x="660" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#744210">Classifier</text>
+
+  <!-- Flatten -->
+  <rect x="600" y="140" width="120" height="35" rx="5" fill="#fef3c7" stroke="#ecc94b"/>
+  <text x="660" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#975a16">Flatten()</text>
+
+  <!-- Linear -->
+  <rect x="600" y="185" width="120" height="35" rx="5" fill="#fef3c7" stroke="#ecc94b"/>
+  <text x="660" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#975a16">Linear(490→10)</text>
+
+  <!-- Flatten calculation -->
+  <text x="660" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">10×7×7 = 490</text>
+
+  <!-- Arrow -->
+  <line x1="740" y1="190" x2="765" y2="190" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Output -->
+  <rect x="770" y="150" width="80" height="80" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="2"/>
+  <text x="810" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#276749">Output</text>
+  <text x="810" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#38a169">[10]</text>
+  <text x="810" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">10 classes</text>
+
+  <!-- Bottom legend -->
+  <rect x="100" y="340" width="700" height="140" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="450" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2d3748">Layer Explanations</text>
+
+  <!-- Conv2d explanation -->
+  <rect x="120" y="385" width="200" height="80" rx="5" fill="#faf5ff" stroke="#9f7aea"/>
+  <text x="220" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#44337a">Conv2d</text>
+  <text x="220" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#553c9a">Extracts local features</text>
+  <text x="220" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#553c9a">using learnable filters</text>
+  <text x="220" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">(edges, textures, patterns)</text>
+
+  <!-- MaxPool2d explanation -->
+  <rect x="350" y="385" width="200" height="80" rx="5" fill="#fed7e2" stroke="#ed64a6"/>
+  <text x="450" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#97266d">MaxPool2d</text>
+  <text x="450" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#b83280">Reduces spatial size</text>
+  <text x="450" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#b83280">Keeps strongest activations</text>
+  <text x="450" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">(28→14→7)</text>
+
+  <!-- Classifier explanation -->
+  <rect x="580" y="385" width="200" height="80" rx="5" fill="#fefcbf" stroke="#ecc94b"/>
+  <text x="680" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#744210">Classifier</text>
+  <text x="680" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#975a16">Flattens feature maps</text>
+  <text x="680" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#975a16">Outputs class logits</text>
+  <text x="680" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#718096">(490→10)</text>
+</svg>

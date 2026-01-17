@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.18)
+project(main LANGUAGES CUDA CXX)
+
+# Add the main executable
+add_executable(main main.cu)
+
+# Legacy default stream for CUDA
+target_compile_options(main
+    PRIVATE
+        $<$<COMPILE_LANGUAGE:CUDA>:--default-stream per-thread -Xcompiler -fopenmp>
+)
+
+# Enable OpenMP
+find_package(OpenMP REQUIRED)
+if(OpenMP_CXX_FOUND)
+    target_link_libraries(main PUBLIC OpenMP::OpenMP_CXX)
+endif()

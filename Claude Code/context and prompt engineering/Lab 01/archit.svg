@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+    <marker id="arrowhead-loop" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="520" rx="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="550" y="38" text-anchor="middle" font-size="16" font-weight="600" fill="#0f172a">The Lifecycle of Context Inside a Claude Code Session</text>
+
+  <!-- USER PROMPT -->
+  <rect x="30" y="160" width="130" height="130" rx="10" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="95" y="215" text-anchor="middle" font-size="13" font-weight="600" fill="#0369a1">User</text>
+  <text x="95" y="235" text-anchor="middle" font-size="13" font-weight="600" fill="#0369a1">Prompt</text>
+  <rect x="75" y="120" width="40" height="30" rx="6" fill="#0ea5e9"/>
+  <polygon points="85,150 80,160 95,150" fill="#0ea5e9"/>
+  <line x1="83" y1="131" x2="107" y2="131" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <line x1="83" y1="139" x2="100" y2="139" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Arrow 1 -->
+  <line x1="160" y1="225" x2="210" y2="225" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- SESSION CONTEXT WINDOW -->
+  <rect x="220" y="80" width="320" height="310" rx="12" fill="#ffffff" stroke="#64748b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="380" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#0f172a">Session Context Window</text>
+  <rect x="240" y="122" width="280" height="48" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="380" y="150" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">System Prompt</text>
+  <rect x="240" y="178" width="280" height="48" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="380" y="206" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">Conversation History</text>
+  <rect x="240" y="234" width="280" height="48" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="1"/>
+  <text x="380" y="262" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">Tool Results</text>
+  <rect x="240" y="290" width="280" height="48" rx="6" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="380" y="318" text-anchor="middle" font-size="12" font-weight="600" fill="#5b21b6">File Contents</text>
+  <rect x="240" y="350" width="280" height="18" rx="4" fill="#e2e8f0"/>
+  <rect x="240" y="350" width="224" height="18" rx="4" fill="#f97316"/>
+  <text x="380" y="363" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Context usage ~80%</text>
+
+  <!-- Arrow 2 -->
+  <line x1="540" y1="225" x2="600" y2="225" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="570" y="215" text-anchor="middle" font-size="10" fill="#64748b">limit</text>
+  <text x="570" y="240" text-anchor="middle" font-size="10" fill="#64748b">reached</text>
+
+  <!-- COMPACTION TRIGGER (funnel) -->
+  <g transform="translate(610, 140)">
+    <polygon points="0,0 150,0 120,140 30,140" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+    <line x1="20" y1="30" x2="130" y2="30" stroke="#fca5a5" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="30" y1="60" x2="120" y2="60" stroke="#fca5a5" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="38" y1="90" x2="112" y2="90" stroke="#fca5a5" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="44" y1="115" x2="106" y2="115" stroke="#fca5a5" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="75" y="25" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">Compaction</text>
+    <text x="75" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="#dc2626">Trigger</text>
+    <text x="75" y="82" text-anchor="middle" font-size="9" fill="#ef4444">Summarize</text>
+    <text x="75" y="108" text-anchor="middle" font-size="9" fill="#ef4444">Compress</text>
+    <text x="75" y="132" text-anchor="middle" font-size="9" fill="#ef4444">Discard</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <line x1="760" y1="225" x2="820" y2="225" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- COMPRESSED CONTEXT -->
+  <rect x="830" y="165" width="210" height="120" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="935" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">Compressed</text>
+  <text x="935" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">Context</text>
+  <text x="935" y="245" text-anchor="middle" font-size="10" fill="#047857">Key decisions preserved</text>
+  <text x="935" y="260" text-anchor="middle" font-size="10" fill="#047857">Details discarded</text>
+
+  <!-- LOOP-BACK ARROW -->
+  <path d="M 935,285 L 935,440 Q 935,460 915,460 L 380,460 Q 360,460 360,440 L 360,395"
+        fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrowhead-loop)"/>
+  <text x="650" y="480" text-anchor="middle" font-size="11" font-weight="600" fill="#7c3aed">Session continues with compressed history</text>
+</svg>

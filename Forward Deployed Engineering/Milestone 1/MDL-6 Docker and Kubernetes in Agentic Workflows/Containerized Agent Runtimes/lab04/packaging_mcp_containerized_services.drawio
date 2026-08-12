@@ -34,11 +34,11 @@
         <mxCell id="Yg2hWaP5utiDOtm-81wp-10" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/assets/material-symbols/1/Track_Changes.svg" value="" vertex="1">
           <mxGeometry height="86" width="86" x="1714" y="254" as="geometry" />
         </mxCell>
-        <mxCell id="Yg2hWaP5utiDOtm-81wp-11" parent="1" style="image;html=1;image=img/lib/clip_art/computers/Database_128x128.png" value="" vertex="1">
-          <mxGeometry height="60" width="70" x="1020" y="988" as="geometry" />
-        </mxCell>
         <mxCell id="Yg2hWaP5utiDOtm-81wp-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;color: rgb(51, 0, 102);&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;./memory/&lt;/font&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="70" x="1097.4799999999814" y="978" as="geometry" />
+        </mxCell>
+        <mxCell id="Yg2hWaP5utiDOtm-81wp-11" parent="1" style="image;html=1;image=img/lib/clip_art/computers/Database_128x128.png" value="" vertex="1">
+          <mxGeometry height="60" width="70" x="1020" y="988" as="geometry" />
         </mxCell>
         <mxCell id="Yg2hWaP5utiDOtm-81wp-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="State that survives container restarts" vertex="1">
           <mxGeometry height="30" width="120.53" x="1089.469999999972" y="1003" as="geometry" />
@@ -73,11 +73,11 @@
         <mxCell id="Yg2hWaP5utiDOtm-81wp-23" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.document;" value="" vertex="1">
           <mxGeometry height="68.42" width="50" x="1245" y="986.7900000000373" as="geometry" />
         </mxCell>
-        <mxCell id="Yg2hWaP5utiDOtm-81wp-24" parent="1" style="image;html=1;image=img/lib/clip_art/computers/Database_128x128.png" value="" vertex="1">
-          <mxGeometry height="60" width="70" x="1454.469999999972" y="1003" as="geometry" />
-        </mxCell>
         <mxCell id="Yg2hWaP5utiDOtm-81wp-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#006600;" value="&lt;font style=&quot;font-size: 14px; color: rgb(0, 102, 0);&quot;&gt;&lt;b&gt;./memory/&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="120.53" x="1750" y="948" as="geometry" />
+        </mxCell>
+        <mxCell id="Yg2hWaP5utiDOtm-81wp-24" parent="1" style="image;html=1;image=img/lib/clip_art/computers/Database_128x128.png" value="" vertex="1">
+          <mxGeometry height="60" width="70" x="1454.469999999972" y="1003" as="geometry" />
         </mxCell>
         <mxCell id="Yg2hWaP5utiDOtm-81wp-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#CC6600;fillColor=none;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b style=&quot;color: rgb(204, 102, 0);&quot;&gt;./logs/&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="120.53" x="1750" y="991" as="geometry" />

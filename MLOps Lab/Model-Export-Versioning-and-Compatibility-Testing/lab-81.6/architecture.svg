@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 500" width="1080" height="500" font-family="Segoe UI, Inter, Arial, sans-serif">
+  <defs>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#15803d"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="1080" height="500" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Title Banner -->
+  <text x="540" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">
+    DakSeba PR Compatibility Suite &amp; MLflow Registry Promotion Gate (Staging &#8594; Production)
+  </text>
+  <text x="540" y="54" text-anchor="middle" font-size="12" fill="#475569">
+    GitHub Actions pull_request workflow verifies contract + smoke tests against live Production before unlocking registry promotion
+  </text>
+
+  <!-- Column 1: Pull Request Branches -->
+  <rect x="26" y="76" width="240" height="394" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="26" y="76" width="240" height="34" rx="10" fill="#e2e8f0"/>
+  <text x="146" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">1. Git Pull Requests (release/candidate.json)</text>
+
+  <!-- Pre-CI attempt -->
+  <rect x="42" y="126" width="208" height="84" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="54" y="146" font-size="12" font-weight="700" fill="#92400e">Direct Promotion (Before PR)</text>
+  <text x="54" y="164" font-size="11" fill="#78350f">Target: dakseba-digits v3 (Staging)</text>
+  <text x="54" y="180" font-size="11" fill="#78350f">Registry tag: ci_status = pending</text>
+  <text x="54" y="196" font-size="11" font-weight="600" fill="#b45309">No GitHub Actions PR run yet</text>
+
+  <!-- PR #12 -->
+  <rect x="42" y="228" width="208" height="104" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="54" y="248" font-size="12" font-weight="700" fill="#991b1b">PR #12: pr/promote-v2</text>
+  <text x="54" y="266" font-size="11" fill="#7f1d1d">Commit: dc06d539</text>
+  <text x="54" y="282" font-size="11" fill="#7f1d1d">Candidate: v2 (flat-mlp-candidate)</text>
+  <text x="54" y="298" font-size="11" fill="#7f1d1d">Schema: (-1, 64) float64</text>
+  <text x="54" y="316" font-size="11" font-weight="600" fill="#dc2626">Breaks (-1, 1, 8, 8) float32 contract</text>
+
+  <!-- PR #13 -->
+  <rect x="42" y="350" width="208" height="104" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="54" y="370" font-size="12" font-weight="700" fill="#166534">PR #13: pr/promote-v3</text>
+  <text x="54" y="388" font-size="11" fill="#14532d">Commit: 031471d2 (merged --ff-only)</text>
+  <text x="54" y="404" font-size="11" fill="#14532d">Candidate: v3 (wide-cnn-candidate)</text>
+  <text x="54" y="420" font-size="11" fill="#14532d">Schema: (-1, 1, 8, 8) float32</text>
+  <text x="54" y="438" font-size="11" font-weight="600" fill="#15803d">val_acc 0.9806 &gt;= Prod v1 (0.9694)</text>
+
+  <!-- Column 2: GitHub Actions PR Workflow -->
+  <rect x="304" y="76" width="272" height="394" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="304" y="76" width="272" height="34" rx="10" fill="#dbeafe"/>
+  <text x="440" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">2. GitHub Actions (on: pull_request)</text>
+
+  <rect x="320" y="124" width="240" height="58" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="1.2"/>
+  <text x="440" y="144" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">.github/workflows/pr-compatibility.yml</text>
+  <text x="440" y="161" text-anchor="middle" font-size="11" fill="#334155">actions/checkout@v4 &#8594; src/run_pr_checks.py</text>
+  <text x="440" y="175" text-anchor="middle" font-size="10.5" fill="#64748b">Loads Staging &amp; Production from 127.0.0.1:5000</text>
+
+  <rect x="320" y="196" width="240" height="122" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.4"/>
+  <text x="332" y="216" font-size="12" font-weight="700" fill="#1d4ed8">Pytest Suite (9 Checks)</text>
+  <text x="332" y="235" font-size="11" font-weight="600" fill="#1e293b">tests/test_contract.py (5 checks):</text>
+  <text x="340" y="251" font-size="10.5" fill="#334155">&#8226; Signature == Production (-1,1,8,8) float32</text>
+  <text x="340" y="266" font-size="10.5" fill="#334155">&#8226; Dtype &amp; dynamic batch (b=1,16) + bad shapes</text>
+  <text x="332" y="285" font-size="11" font-weight="600" fill="#1e293b">tests/test_smoke.py (4 checks):</text>
+  <text x="340" y="301" font-size="10.5" fill="#334155">&#8226; Cold load &lt; 5s, finite logits &amp; class probs</text>
+  <text x="340" y="315" font-size="10.5" fill="#334155">&#8226; Non-regression: cand_acc &gt;= prod_acc</text>
+
+  <!-- CI Stamp Outcomes -->
+  <rect x="320" y="334" width="240" height="54" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+  <text x="332" y="353" font-size="11.5" font-weight="700" fill="#b91c1c">PR #12 Result: Job failed (3/9 passed)</text>
+  <text x="332" y="371" font-size="10.5" fill="#7f1d1d">Stamps v2: ci_status=red, ci_pr=#12, sha=dc06d539</text>
+
+  <rect x="320" y="400" width="240" height="54" rx="7" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.3"/>
+  <text x="332" y="419" font-size="11.5" font-weight="700" fill="#15803d">PR #13 Result: Job succeeded (9/9 passed)</text>
+  <text x="332" y="437" font-size="10.5" fill="#14532d">Stamps v3: ci_status=green, ci_pr=#13, sha=031471d2</text>
+
+  <!-- Column 3: Promotion Gate + MLflow Registry -->
+  <rect x="614" y="76" width="440" height="394" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="614" y="76" width="440" height="34" rx="10" fill="#dcfce7"/>
+  <text x="834" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#14532d">3. Promotion Gate &amp; MLflow Model Registry (SQLite :5000)</text>
+
+  <!-- Gate Controller -->
+  <rect x="630" y="124" width="408" height="106" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="644" y="145" font-size="12" font-weight="700" fill="#0f172a">src/promote_to_production.py (Gate Rules)</text>
+  <text x="644" y="164" font-size="11" fill="#334155">Requires: stage == Staging AND ci_status == green AND ci_sha == HEAD</text>
+  <text x="644" y="183" font-size="11" font-weight="600" fill="#dc2626">&#10007; v3 pre-CI (pending) &#8594; BLOCKED   |   &#10007; v2 PR #12 (red) &#8594; BLOCKED</text>
+  <text x="644" y="201" font-size="11" font-weight="600" fill="#15803d">&#10003; v3 PR #13 (green @ 031471d2) &#8594; PROMOTED (Staging &#8594; Production)</text>
+  <text x="644" y="218" font-size="10.5" fill="#475569">Records immutable rows in PR Compatibility &amp; Promotion Gate Audit</text>
+
+  <!-- MLflow Registry Versions -->
+  <rect x="630" y="246" width="408" height="208" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.3"/>
+  <text x="644" y="267" font-size="12" font-weight="700" fill="#0f172a">Registered Model: dakseba-digits (Final Verified State)</text>
+
+  <rect x="644" y="280" width="380" height="48" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="656" y="300" font-size="11.5" font-weight="700" fill="#14532d">v3 (wide-cnn-candidate) &#8212; Stage: Production  [@champion]</text>
+  <text x="656" y="317" font-size="10.5" fill="#166534">ci_status=green (PR #13, 9/9) | acc=0.9806 | None &#8594; Staging &#8594; Production</text>
+
+  <rect x="644" y="336" width="380" height="48" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.3"/>
+  <text x="656" y="356" font-size="11.5" font-weight="700" fill="#92400e">v2 (flat-mlp-candidate) &#8212; Stage: Staging (Held Back)</text>
+  <text x="656" y="373" font-size="10.5" fill="#78350f">ci_status=red (PR #12, 3/9) | incompatible (-1,64) | None &#8594; Staging</text>
+
+  <rect x="644" y="392" width="380" height="48" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="1.3"/>
+  <text x="656" y="412" font-size="11.5" font-weight="700" fill="#334155">v1 (baseline-cnn) &#8212; Stage: Archived  [@previous-prod]</text>
+  <text x="656" y="429" font-size="10.5" fill="#475569">Auto-archived on v3 promotion | acc=0.9694 | None &#8594; Staging &#8594; Prod &#8594; Archived</text>
+
+  <!-- Connectors -->
+  <line x1="250" y1="162" x2="628" y2="162" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+  <line x1="250" y1="280" x2="318" y2="256" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow-red)"/>
+  <line x1="250" y1="402" x2="318" y2="288" stroke="#15803d" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <line x1="440" y1="182" x2="440" y2="195" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow-slate)"/>
+  <line x1="560" y1="360" x2="628" y2="185" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arrow-red)"/>
+  <line x1="560" y1="426" x2="628" y2="198" stroke="#15803d" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <line x1="834" y1="230" x2="834" y2="245" stroke="#15803d" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+</svg>

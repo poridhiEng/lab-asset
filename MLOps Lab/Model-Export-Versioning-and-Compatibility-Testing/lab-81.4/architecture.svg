@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" font-family="Segoe UI, Inter, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#15803d"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="470" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Title Banner -->
+  <text x="600" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">DakSeba MLflow Model Registry Lifecycle, Aliases &amp; Transition History</text>
+  <text x="600" y="52" text-anchor="middle" font-size="12" fill="#475569">Exported model artifacts registered under dakseba-digits, promoted None -&gt; Staging -&gt; Production, aliased, and audited in the UI</text>
+
+  <!-- Stage Headers -->
+  <text x="145" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#334155" letter-spacing="0.5">1. EXPORTED ARTIFACTS</text>
+  <text x="455" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#334155" letter-spacing="0.5">2. STAGE &amp; ALIAS LIFECYCLE</text>
+  <text x="780" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#334155" letter-spacing="0.5">3. SQLITE STORE &amp; REGISTRY UI</text>
+  <text x="1070" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#334155" letter-spacing="0.5">4. ALIAS LOADING</text>
+
+  <!-- Column 1: Exported Candidates -->
+  <rect x="25" y="96" width="240" height="336" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="145" y="120" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1e3a8a">src/export_candidates.py</text>
+  <text x="145" y="138" text-anchor="middle" font-size="10.5" fill="#475569">DigitNet CNN · SEED=42 · TensorSpec</text>
+
+  <rect x="41" y="154" width="208" height="72" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="145" y="174" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e40af">baseline-cnn (run 6d841a57)</text>
+  <text x="145" y="192" text-anchor="middle" font-size="10.5" fill="#334155">width=16 · lr=0.001 · epochs=5</text>
+  <text x="145" y="210" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0f172a">val_acc = 0.8806</text>
+
+  <rect x="41" y="240" width="208" height="72" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="145" y="260" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e40af">tuned-cnn (run 986d23b7)</text>
+  <text x="145" y="278" text-anchor="middle" font-size="10.5" fill="#334155">width=16 · lr=0.003 · epochs=10</text>
+  <text x="145" y="296" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0f172a">val_acc = 0.9694</text>
+
+  <rect x="41" y="326" width="208" height="72" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="145" y="346" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e40af">wide-cnn (run ae2641cf)</text>
+  <text x="145" y="364" text-anchor="middle" font-size="10.5" fill="#334155">width=32 · digits-v2 · epochs=10</text>
+  <text x="145" y="382" text-anchor="middle" font-size="10.5" font-weight="600" fill="#15803d">val_acc = 0.9806</text>
+
+  <text x="145" y="418" text-anchor="middle" font-size="10" fill="#475569">outputs/exported_models.json</text>
+
+  <!-- Arrows Col 1 -> Col 2 -->
+  <line x1="265" y1="190" x2="305" y2="190" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="265" y1="276" x2="305" y2="276" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="265" y1="362" x2="305" y2="362" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Register + Stage Transitions + Aliases -->
+  <rect x="310" y="96" width="290" height="336" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="455" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#3730a3">register_versions.py + promote_and_alias.py</text>
+  <text x="455" y="136" text-anchor="middle" font-size="10.5" fill="#475569">Registered Model: dakseba-digits</text>
+
+  <!-- v1 lifecycle -->
+  <rect x="324" y="154" width="262" height="72" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1.3"/>
+  <text x="455" y="173" text-anchor="middle" font-size="11.5" font-weight="700" fill="#334155">Version 1 · Stage: Archived</text>
+  <text x="455" y="191" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#475569">None -&gt; Staging -&gt; Production -&gt; Archived</text>
+  <text x="455" y="210" text-anchor="middle" font-size="10.5" font-weight="600" fill="#475569">Alias: @previous-prod (auto-archived by v3)</text>
+
+  <!-- v2 lifecycle -->
+  <rect x="324" y="240" width="262" height="72" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-width="1.3"/>
+  <text x="455" y="259" text-anchor="middle" font-size="11.5" font-weight="700" fill="#854d0e">Version 2 · Stage: Staging</text>
+  <text x="455" y="277" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#713f12">None -&gt; Staging</text>
+  <text x="455" y="296" text-anchor="middle" font-size="10.5" font-weight="600" fill="#a16207">Alias: @challenger (shadow evaluation)</text>
+
+  <!-- v3 lifecycle -->
+  <rect x="324" y="326" width="262" height="72" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="455" y="345" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">Version 3 · Stage: Production</text>
+  <text x="455" y="363" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#14532d">None -&gt; Staging -&gt; Production</text>
+  <text x="455" y="382" text-anchor="middle" font-size="10.5" font-weight="700" fill="#15803d">Alias: @champion (moved v1 -&gt; v3)</text>
+
+  <text x="455" y="418" text-anchor="middle" font-size="10" fill="#475569">13 UTC events -&gt; outputs/transition_history.json</text>
+
+  <!-- Arrows Col 2 -> Col 3 -->
+  <line x1="600" y1="210" x2="640" y2="210" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="600" y1="330" x2="640" y2="330" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: MLflow Tracking & Registry Server -->
+  <rect x="645" y="96" width="270" height="156" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="780" y="118" text-anchor="middle" font-size="12.5" font-weight="700" fill="#9a3412">MLflow 3.18.0 Registry Server</text>
+  <text x="780" y="136" text-anchor="middle" font-size="10.5" fill="#7c2d12">http://127.0.0.1:5000 · --serve-artifacts</text>
+  <text x="780" y="156" text-anchor="middle" font-size="10.5" fill="#334155">SQLite: mlflow-data/mlflow.db</text>
+  <text x="780" y="174" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#475569">model_versions (current_stage)</text>
+  <text x="780" y="191" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#475569">registered_model_aliases</text>
+  <text x="780" y="208" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#475569">model_version_tags (stage_history)</text>
+  <text x="780" y="232" text-anchor="middle" font-size="10.5" font-weight="600" fill="#c2410c">Artifacts: mlflow-data/artifacts/</text>
+
+  <line x1="780" y1="252" x2="780" y2="274" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="645" y="278" width="270" height="154" rx="8" fill="#fdf4ff" stroke="#a21caf" stroke-width="1.5"/>
+  <text x="780" y="300" text-anchor="middle" font-size="12.5" font-weight="700" fill="#86198f">MLflow Registry UI (/proxy/5000/)</text>
+  <text x="780" y="320" text-anchor="middle" font-size="10.5" fill="#334155">Modern UI (ON): @champion, @challenger,</text>
+  <text x="780" y="336" text-anchor="middle" font-size="10.5" fill="#334155">@previous-prod + stage_history tags</text>
+  <text x="780" y="356" text-anchor="middle" font-size="10.5" fill="#334155">Classic UI (OFF): Production, Staging,</text>
+  <text x="780" y="372" text-anchor="middle" font-size="10.5" fill="#334155">Archived stage badges</text>
+  <text x="780" y="394" text-anchor="middle" font-size="10.5" font-weight="700" fill="#701a75">Rendered Markdown Audit Tables:</text>
+  <text x="780" y="412" text-anchor="middle" font-size="10.5" fill="#701a75">Full 13-Event Transition History</text>
+
+  <!-- Arrow Col 3 -> Col 4 -->
+  <line x1="915" y1="175" x2="955" y2="225" stroke="#15803d" stroke-width="1.6" marker-end="url(#arrow-green)"/>
+  <line x1="915" y1="350" x2="955" y2="285" stroke="#15803d" stroke-width="1.6" marker-end="url(#arrow-green)"/>
+
+  <!-- Column 4: Alias Verification -->
+  <rect x="960" y="138" width="215" height="236" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="1.8"/>
+  <text x="1067" y="162" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14532d">src/verify_registry.py</text>
+  <line x1="976" y1="172" x2="1158" y2="172" stroke="#86efac" stroke-width="1"/>
+  <text x="1067" y="193" text-anchor="middle" font-size="10.5" font-weight="600" fill="#166534">Load by Mutable Alias URI:</text>
+  <text x="1067" y="214" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#14532d">@champion -&gt; v3 (0.9806)</text>
+  <text x="1067" y="234" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#14532d">@challenger -&gt; v2 (0.9694)</text>
+  <text x="1067" y="254" text-anchor="middle" font-size="10" font-family="Consolas, monospace" fill="#14532d">@previous-prod -&gt; v1 (0.8806)</text>
+  <line x1="976" y1="268" x2="1158" y2="268" stroke="#86efac" stroke-width="1"/>
+  <text x="1067" y="288" text-anchor="middle" font-size="10.5" fill="#166534">SQLite == API == 13 UI Events</text>
+  <text x="1067" y="306" text-anchor="middle" font-size="10.5" fill="#166534">Zero serving code edits</text>
+  <rect x="1007" y="324" width="120" height="28" rx="5" fill="#15803d"/>
+  <text x="1067" y="342" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">OVERALL = PASS</text>
+</svg>

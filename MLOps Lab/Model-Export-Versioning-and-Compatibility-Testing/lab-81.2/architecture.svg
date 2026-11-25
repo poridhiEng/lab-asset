@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 470" width="1180" height="470" font-family="Segoe UI, Inter, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#15803d"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1180" height="470" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Title Banner -->
+  <text x="590" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">DakSeba Multi-Format Export &amp; Cross-Runtime Portability Pipeline</text>
+  <text x="590" y="52" text-anchor="middle" font-size="12" fill="#475569">One trained DigitNet model exported to three formats and validated in three isolated OS Python processes</text>
+
+  <!-- Stage Column Labels -->
+  <text x="130" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#334155" letter-spacing="0.5">1. SINGLE TRAINING RUN</text>
+  <text x="425" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#334155" letter-spacing="0.5">2. EXPORTED ARTIFACTS</text>
+  <text x="765" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#334155" letter-spacing="0.5">3. SEPARATE PYTHON PROCESSES</text>
+  <text x="1065" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#334155" letter-spacing="0.5">4. PARITY GATE</text>
+
+  <!-- Column 1: Data + DigitNet Training -->
+  <rect x="25" y="96" width="210" height="106" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="130" y="118" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">src/model.py</text>
+  <text x="130" y="137" text-anchor="middle" font-size="11" fill="#1e40af">8x8 Postcode Digit Scans</text>
+  <text x="130" y="154" text-anchor="middle" font-size="10.5" fill="#334155">train: (1437, 1, 8, 8) float32</text>
+  <text x="130" y="170" text-anchor="middle" font-size="10.5" fill="#334155">test: (360, 1, 8, 8) · SEED=42</text>
+  <text x="130" y="187" text-anchor="middle" font-size="11" font-weight="600" fill="#1d4ed8">DigitNet CNN · 9,930 params</text>
+
+  <line x1="130" y1="202" x2="130" y2="228" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="25" y="232" width="210" height="112" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="130" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#312e81">src/train_and_export.py</text>
+  <text x="130" y="273" text-anchor="middle" font-size="10.5" fill="#3730a3">Train once (10 epochs, lr=0.003)</text>
+  <text x="130" y="290" text-anchor="middle" font-size="11" font-weight="600" fill="#1e1b4b">test_acc = 0.9694</text>
+  <text x="130" y="308" text-anchor="middle" font-size="10.5" fill="#475569">Same weights exported 3 ways</text>
+  <text x="130" y="325" text-anchor="middle" font-size="10.5" fill="#475569">+ outputs/test_bundle.npz</text>
+
+  <!-- Fan-out arrows from train_and_export to 3 formats -->
+  <path d="M 235 268 C 262 268, 262 145, 292 145" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="235" y1="285" x2="292" y2="265" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 235 302 C 262 302, 262 385, 292 385" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: 3 Exported Formats -->
+  <!-- Format 1: torch.save -->
+  <rect x="297" y="96" width="256" height="98" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="425" y="117" text-anchor="middle" font-size="12.5" font-weight="700" fill="#9a3412">PyTorch Native (torch.save)</text>
+  <text x="425" y="135" text-anchor="middle" font-size="11" font-family="Consolas, monospace" fill="#7c2d12">digitnet.pt (41.8 KB)</text>
+  <text x="425" y="153" text-anchor="middle" font-size="10.5" fill="#334155">OrderedDict · 6 weight tensors</text>
+  <text x="425" y="170" text-anchor="middle" font-size="10.5" font-weight="600" fill="#c2410c">graph_bundled = False</text>
+  <text x="425" y="185" text-anchor="middle" font-size="10" fill="#64748b">sha256: cb86e49cd20e</text>
+
+  <!-- Format 2: TF SavedModel -->
+  <rect x="297" y="214" width="256" height="98" rx="8" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="425" y="235" text-anchor="middle" font-size="12.5" font-weight="700" fill="#854d0e">TensorFlow SavedModel</text>
+  <text x="425" y="253" text-anchor="middle" font-size="11" font-family="Consolas, monospace" fill="#713f12">digitnet_savedmodel/ (67.1 KB)</text>
+  <text x="425" y="271" text-anchor="middle" font-size="10.5" fill="#334155">saved_model.pb + variables/ (4 files)</text>
+  <text x="425" y="288" text-anchor="middle" font-size="10.5" font-weight="600" fill="#a16207">serving_default: (None,1,8,8)-&gt;(None,10)</text>
+  <text x="425" y="303" text-anchor="middle" font-size="10" fill="#64748b">Graph + weights bundled</text>
+
+  <!-- Format 3: ONNX -->
+  <rect x="297" y="332" width="256" height="98" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="425" y="353" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">ONNX Graph (dynamo=True)</text>
+  <text x="425" y="371" text-anchor="middle" font-size="11" font-family="Consolas, monospace" fill="#14532d">digitnet.onnx (49.1 KB)</text>
+  <text x="425" y="389" text-anchor="middle" font-size="10.5" fill="#334155">opset=20 · onnx.checker = PASS</text>
+  <text x="425" y="406" text-anchor="middle" font-size="10.5" font-weight="600" fill="#15803d">['batch',1,8,8] -&gt; ['batch',10]</text>
+  <text x="425" y="421" text-anchor="middle" font-size="10" fill="#64748b">sha256: 83739910dae8</text>
+
+  <!-- Arrows from Artifacts to Isolated Processes -->
+  <line x1="553" y1="145" x2="607" y2="145" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="553" y1="263" x2="607" y2="263" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="553" y1="381" x2="607" y2="381" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: 3 Isolated Subprocesses -->
+  <!-- Process 1 -->
+  <rect x="612" y="96" width="306" height="98" rx="8" fill="#ffffff" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="765" y="117" text-anchor="middle" font-size="12" font-weight="700" fill="#9a3412">Subprocess 1 · reload_pytorch.py</text>
+  <text x="765" y="135" text-anchor="middle" font-size="10.5" fill="#334155">Runtime: torch 2.15.0+cpu (no TF / ORT)</text>
+  <text x="765" y="152" text-anchor="middle" font-size="10.5" font-weight="600" fill="#c2410c">Requires DigitNet class (code_req=True)</text>
+  <text x="765" y="169" text-anchor="middle" font-size="10.5" fill="#475569">load: 8.61 ms · b=1: 0.237 ms · b=360: 15.15 ms</text>
+  <text x="765" y="185" text-anchor="middle" font-size="10.5" fill="#0f172a">acc=0.9694 · max_diff=5.72e-06</text>
+
+  <!-- Process 2 -->
+  <rect x="612" y="214" width="306" height="98" rx="8" fill="#ffffff" stroke="#ca8a04" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="765" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#854d0e">Subprocess 2 · reload_tensorflow.py -P</text>
+  <text x="765" y="253" text-anchor="middle" font-size="10.5" fill="#334155">Runtime: tensorflow 2.21.0 (no torch / ORT)</text>
+  <text x="765" y="270" text-anchor="middle" font-size="10.5" font-weight="600" fill="#15803d">Self-contained (code_req=False)</text>
+  <text x="765" y="287" text-anchor="middle" font-size="10.5" fill="#475569">load: 267.37 ms · b=1: 1.054 ms · b=360: 10.19 ms</text>
+  <text x="765" y="303" text-anchor="middle" font-size="10.5" fill="#0f172a">acc=0.9694 · max_diff=1.91e-06</text>
+
+  <!-- Process 3 -->
+  <rect x="612" y="332" width="306" height="98" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="765" y="353" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">Subprocess 3 · reload_onnx.py -P</text>
+  <text x="765" y="371" text-anchor="middle" font-size="10.5" fill="#334155">Runtime: onnxruntime 1.32.0 (no torch / TF)</text>
+  <text x="765" y="388" text-anchor="middle" font-size="10.5" font-weight="600" fill="#15803d">Self-contained (code_req=False)</text>
+  <text x="765" y="405" text-anchor="middle" font-size="10.5" fill="#475569">load: 14.13 ms · b=1: 0.061 ms · b=360: 3.27 ms</text>
+  <text x="765" y="421" text-anchor="middle" font-size="10.5" fill="#0f172a">acc=0.9694 · max_diff=4.77e-06</text>
+
+  <!-- Convergence Arrows to Parity Gate -->
+  <path d="M 918 145 C 946 145, 946 235, 972 235" fill="none" stroke="#15803d" stroke-width="1.6" marker-end="url(#arrow-green)"/>
+  <line x1="918" y1="263" x2="972" y2="263" stroke="#15803d" stroke-width="1.6" marker-end="url(#arrow-green)"/>
+  <path d="M 918 381 C 946 381, 946 291, 972 291" fill="none" stroke="#15803d" stroke-width="1.6" marker-end="url(#arrow-green)"/>
+
+  <!-- Column 4: Portability Verdict -->
+  <rect x="977" y="182" width="178" height="162" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="1.8"/>
+  <text x="1066" y="205" text-anchor="middle" font-size="12" font-weight="700" fill="#14532d">validate_portability.py</text>
+  <line x1="991" y1="215" x2="1141" y2="215" stroke="#86efac" stroke-width="1"/>
+  <text x="1066" y="235" text-anchor="middle" font-size="11" fill="#166534">3 distinct OS PIDs</text>
+  <text x="1066" y="253" text-anchor="middle" font-size="11" fill="#166534">Isolated sys.modules</text>
+  <text x="1066" y="271" text-anchor="middle" font-size="11" fill="#166534">max_diff &lt; 1e-5</text>
+  <text x="1066" y="289" text-anchor="middle" font-size="11" font-weight="600" fill="#14532d">Agree: 360 / 360</text>
+  <rect x="1006" y="303" width="120" height="26" rx="5" fill="#15803d"/>
+  <text x="1066" y="320" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">OVERALL = PASS</text>
+</svg>

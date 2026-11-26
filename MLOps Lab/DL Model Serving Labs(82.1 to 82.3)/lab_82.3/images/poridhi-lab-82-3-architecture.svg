@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="650" viewBox="0 0 1250 650" role="img" aria-labelledby="diagram-title diagram-description" font-family="Arial, Helvetica, sans-serif">
+  <title id="diagram-title">Lab 82.3: Batch vs Real-Time Endpoints</title>
+  <desc id="diagram-description">The benchmark client calls a synchronous real-time endpoint and an asynchronous batch endpoint. A micro-batch worker and the real-time endpoint share one model slot. The client polls the batch results endpoint to retrieve each job's prediction.</desc>
+  <style>
+  @keyframes poridhi-flow { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .flow-edge {
+      stroke-dasharray: 8px;
+      stroke-dashoffset: 16px;
+      animation: poridhi-flow 500ms linear infinite;
+    }
+  }
+</style>
+  <rect width="1250" height="650" fill="#FFFFFF" />
+  <image id="logo" x="13.716981132075475" y="7.983490566037737" width="274.83490566037733" height="69.97641509433961" href="data:image/png;base64,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" />
+  <text id="title" x="34.0" y="93.0" font-size="26" fill="#242441" font-weight="700" text-anchor="start" dominant-baseline="central">Lab 82.3: Batch vs Real-Time Endpoints</text>
+  <text id="subtitle" x="34.0" y="126.0" font-size="14" fill="#687086" font-weight="400" text-anchor="start" dominant-baseline="central">Compare prediction-ready latency and cost on a shared model.</text>
+  <rect id="vm" x="34.0" y="160.0" width="1182.0" height="410.0" rx="12.3" fill="#F6F5FD" stroke="#DDDDF7" />
+  <rect id="vm-tab" x="34.0" y="160.0" width="252.0" height="26.0" rx="3.6" fill="#2F4AA6" stroke="none" />
+  <text id="vm-tab-label" x="160.0" y="173.0" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle" dominant-baseline="central">PORIDHI VM   |   127.0.0.1:8000</text>
+  <rect id="client" x="64.0" y="326.0" width="192.0" height="72.0" rx="6.5" fill="#FFFFFF" stroke="#C8C9E9" />
+  <g id="client-icon" transform="translate(77 349)">
+    <path d="M3 4H21V17H3Z M7 21H17 M12 17V21" fill="none" stroke="#2F4AA6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text id="client-title" x="110.0" y="351.5" font-size="14" fill="#242441" font-weight="700" text-anchor="start" dominant-baseline="central">Benchmark client</text>
+  <text id="client-subtitle" x="110.0" y="372.0" font-size="11" fill="#687086" font-weight="400" text-anchor="start" dominant-baseline="central">HTTPX</text>
+  <rect id="real" x="331.0" y="221.0" width="192.0" height="72.0" rx="6.5" fill="#FFFFFF" stroke="#C8C9E9" />
+  <g id="real-icon" transform="translate(344 244)">
+    <path d="M13 2L5 13H11L10 22L19 10H13Z" fill="none" stroke="#2F4AA6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text id="real-title" x="377.0" y="246.5" font-size="14" fill="#242441" font-weight="700" text-anchor="start" dominant-baseline="central">Real-time endpoint</text>
+  <text id="real-subtitle" x="377.0" y="267.0" font-size="11" fill="#687086" font-weight="400" text-anchor="start" dominant-baseline="central">POST /predict</text>
+  <rect id="submit" x="331.0" y="326.0" width="192.0" height="72.0" rx="6.5" fill="#FFFFFF" stroke="#C8C9E9" />
+  <g id="submit-icon" transform="translate(344 349)">
+    <path d="M4 4H20V20H4Z M8 9H16 M8 15H16" fill="none" stroke="#0E7C95" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text id="submit-title" x="377.0" y="351.5" font-size="14" fill="#242441" font-weight="700" text-anchor="start" dominant-baseline="central">Batch submission</text>
+  <text id="submit-subtitle" x="377.0" y="372.0" font-size="11" fill="#687086" font-weight="400" text-anchor="start" dominant-baseline="central">POST /batch</text>
+  <rect id="result" x="331.0" y="471.0" width="192.0" height="72.0" rx="6.5" fill="#FFFFFF" stroke="#C8C9E9" />
+  <g id="result-icon" transform="translate(344 494)">
+    <path d="M5 3H19V21H5Z M8 12L11 15L16 9" fill="none" stroke="#0E7C95" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text id="result-title" x="377.0" y="496.5" font-size="14" fill="#242441" font-weight="700" text-anchor="start" dominant-baseline="central">Batch results</text>
+  <text id="result-subtitle" x="377.0" y="517.0" font-size="11" fill="#687086" font-weight="400" text-anchor="start" dominant-baseline="central">GET /batch/{job_id}</text>
+  <rect id="worker" x="625.0" y="326.0" width="192.0" height="72.0" rx="6.5" fill="#FFFFFF" stroke="#C8C9E9" />
+  <g id="worker-icon" transform="translate(638 349)">
+    <path d="M4 6H20 M4 12H20 M4 18H20" fill="none" stroke="#0E7C95" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text id="worker-title" x="671.0" y="351.5" font-size="14" fill="#242441" font-weight="700" text-anchor="start" dominant-baseline="central">Micro-batch worker</text>
+  <text id="worker-subtitle" x="671.0" y="372.0" font-size="11" fill="#687086" font-weight="400" text-anchor="start" dominant-baseline="central">FIFO · up to 8 rows</text>
+  <rect id="model" x="966.0" y="221.0" width="192.0" height="72.0" rx="6.5" fill="#FFFFFF" stroke="#C8C9E9" />
+  <g id="model-icon" transform="translate(979 244)">
+    <path d="M12 3L21 8L12 13L3 8Z M3 12L12 17L21 12 M3 16L12 21L21 16" fill="none" stroke="#2F4AA6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text id="model-title" x="1012.0" y="246.5" font-size="14" fill="#242441" font-weight="700" text-anchor="start" dominant-baseline="central">Shared model</text>
+  <text id="model-subtitle" x="1012.0" y="267.0" font-size="11" fill="#687086" font-weight="400" text-anchor="start" dominant-baseline="central">NumPy · one slot</text>
+  <rect id="store" x="625.0" y="471.0" width="192.0" height="72.0" rx="6.5" fill="#FFFFFF" stroke="#C8C9E9" />
+  <g id="store-icon" transform="translate(638 494)">
+    <path d="M4 5H20V19H4Z M4 10H20 M4 15H20 M8 7H9 M8 12H9 M8 17H9" fill="none" stroke="#0E7C95" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text id="store-title" x="671.0" y="496.5" font-size="14" fill="#242441" font-weight="700" text-anchor="start" dominant-baseline="central">In-memory job store</text>
+  <text id="store-subtitle" x="671.0" y="517.0" font-size="11" fill="#687086" font-weight="400" text-anchor="start" dominant-baseline="central">Results retained 120 s</text>
+  <rect id="footer-rule" x="34.0" y="599.0" width="1182.0" height="1.0" rx="0.0" fill="#E2E8F0" stroke="none" />
+  <text id="footer-brand" x="34.0" y="620.0" font-size="11" fill="#2F4AA6" font-weight="700" text-anchor="start" dominant-baseline="central">Poridhi.io | Hands-on Labs</text>
+  <text id="footer-tagline" x="1216.0" y="620.0" font-size="11" fill="#94A3B8" font-weight="400" text-anchor="end" dominant-baseline="central">Learn data engineering by building it</text>
+  <g id="client-real" stroke="#2F4AA6" stroke-width="1.5">
+    <path class="flow-edge" d="M 321.82 257 L 308 257 L 188.8 257 L 188.8 316.82" fill="none" />
+    <path id="client-real-arrow-1" class="arrowhead" d="M 188.8 324.32 L 185.05 316.82 L 192.55 316.82 Z" fill="#2F4AA6" />
+    <path id="client-real-arrow-2" class="arrowhead" d="M 329.32 257 L 321.82 260.75 L 321.82 253.25 Z" fill="#2F4AA6" />
+  </g>
+  <g id="client-submit" stroke="#0E7C95" stroke-width="1.5">
+    <path class="flow-edge" d="M 321.82 362 L 265.18 362" fill="none" />
+    <path id="client-submit-arrow-1" class="arrowhead" d="M 257.68 362 L 265.18 358.25 L 265.18 365.75 Z" fill="#0E7C95" />
+    <path id="client-submit-arrow-2" class="arrowhead" d="M 329.32 362 L 321.82 365.75 L 321.82 358.25 Z" fill="#0E7C95" />
+  </g>
+  <g id="client-result" stroke="#0E7C95" stroke-width="1.5">
+    <path class="flow-edge" d="M 188.8 407.18 L 188.8 507 L 308 507 L 321.82 507" fill="none" />
+    <path id="client-result-arrow-1" class="arrowhead" d="M 188.8 399.68 L 192.55 407.18 L 185.05 407.18 Z" fill="#0E7C95" />
+    <path id="client-result-arrow-2" class="arrowhead" d="M 329.32 507 L 321.82 510.75 L 321.82 503.25 Z" fill="#0E7C95" />
+  </g>
+  <g id="submit-worker" stroke="#0E7C95" stroke-width="1.5">
+    <path class="flow-edge" d="M 523 362 L 615.82 362" fill="none" />
+    <path id="submit-worker-arrow-1" class="arrowhead" d="M 623.32 362 L 615.82 365.75 L 615.82 358.25 Z" fill="#0E7C95" />
+  </g>
+  <g id="real-model" stroke="#2F4AA6" stroke-width="1.5">
+    <path class="flow-edge" d="M 532.18 257 L 956.82 257" fill="none" />
+    <path id="real-model-arrow-1" class="arrowhead" d="M 524.68 257 L 532.18 253.25 L 532.18 260.75 Z" fill="#2F4AA6" />
+    <path id="real-model-arrow-2" class="arrowhead" d="M 964.32 257 L 956.82 260.75 L 956.82 253.25 Z" fill="#2F4AA6" />
+  </g>
+  <g id="worker-model" stroke="#0E7C95" stroke-width="1.5">
+    <path class="flow-edge" d="M 826.18 362 L 1062 362 L 1062 302.18" fill="none" />
+    <path id="worker-model-arrow-1" class="arrowhead" d="M 818.68 362 L 826.18 358.25 L 826.18 365.75 Z" fill="#0E7C95" />
+    <path id="worker-model-arrow-2" class="arrowhead" d="M 1062 294.68 L 1065.75 302.18 L 1058.25 302.18 Z" fill="#0E7C95" />
+  </g>
+  <g id="worker-store" stroke="#0E7C95" stroke-width="1.5">
+    <path class="flow-edge" d="M 721 398 L 721 461.82" fill="none" />
+    <path id="worker-store-arrow-1" class="arrowhead" d="M 721 469.32 L 717.25 461.82 L 724.75 461.82 Z" fill="#0E7C95" />
+  </g>
+  <g id="result-store" stroke="#0E7C95" stroke-width="1.5">
+    <path class="flow-edge" d="M 532.18 507 L 615.82 507" fill="none" />
+    <path id="result-store-arrow-1" class="arrowhead" d="M 524.68 507 L 532.18 503.25 L 532.18 510.75 Z" fill="#0E7C95" />
+    <path id="result-store-arrow-2" class="arrowhead" d="M 623.32 507 L 615.82 510.75 L 615.82 503.25 Z" fill="#0E7C95" />
+  </g>
+  <rect x="200.53125" y="239.90625" width="51.9375" height="13.1875" fill="#FFFFFF" />
+  <text id="client-real-label" x="226.5" y="246.5" font-size="11" fill="#2F4AA6" font-weight="700" text-anchor="middle" dominant-baseline="central">HTTP 200</text>
+  <rect x="268.53125" y="344.90625" width="51.9375" height="13.1875" fill="#FFFFFF" />
+  <text id="client-submit-label" x="294.5" y="351.5" font-size="11" fill="#0E7C95" font-weight="700" text-anchor="middle" dominant-baseline="central">HTTP 202</text>
+  <rect x="195.421875" y="489.90625" width="22.171875" height="13.1875" fill="#FFFFFF" />
+  <text id="client-result-label" x="206.51" y="496.5" font-size="11" fill="#0E7C95" font-weight="700" text-anchor="middle" dominant-baseline="central">Poll</text>
+  <rect x="550.28125" y="344.90625" width="48.453125" height="13.1875" fill="#FFFFFF" />
+  <text id="submit-worker-label" x="574.51" y="351.5" font-size="11" fill="#0E7C95" font-weight="700" text-anchor="middle" dominant-baseline="central">Enqueue</text>
+  <rect x="706.609375" y="239.90625" width="77.796875" height="13.1875" fill="#FFFFFF" />
+  <text id="real-model-label" x="745.51" y="246.5" font-size="11" fill="#2F4AA6" font-weight="700" text-anchor="middle" dominant-baseline="central">Score one row</text>
+  <rect x="936.515625" y="344.90625" width="75.96875" height="13.1875" fill="#FFFFFF" />
+  <text id="worker-model-label" x="974.5" y="351.5" font-size="11" fill="#0E7C95" font-weight="700" text-anchor="middle" dominant-baseline="central">Score a group</text>
+  <rect x="688.09375" y="417.90625" width="66.828125" height="13.1875" fill="#FFFFFF" />
+  <text id="worker-store-label" x="721.51" y="424.5" font-size="11" fill="#0E7C95" font-weight="700" text-anchor="middle" dominant-baseline="central">Save results</text>
+  <rect x="542.328125" y="489.90625" width="64.359375" height="13.1875" fill="#FFFFFF" />
+  <text id="result-store-label" x="574.51" y="496.5" font-size="11" fill="#0E7C95" font-weight="700" text-anchor="middle" dominant-baseline="central">Read status</text>
+</svg>
